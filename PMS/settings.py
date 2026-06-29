@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 import os
+import shutil
+import sqlite3
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,6 +21,32 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 def env_bool(name, default=False):
     return os.environ.get(name, str(default)).lower() in {'1', 'true', 'yes', 'on'}
+
+
+def sqlite_has_table(db_path, table_name):
+    if not db_path.exists():
+        return False
+
+    try:
+        with sqlite3.connect(db_path) as connection:
+            cursor = connection.execute(
+                "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?",
+                [table_name],
+            )
+            return cursor.fetchone() is not None
+    except sqlite3.DatabaseError:
+        return False
+
+
+def database_path():
+    source_db = BASE_DIR / 'db.sqlite3'
+    if not os.environ.get('VERCEL'):
+        return source_db
+
+    runtime_db = Path('/tmp/db.sqlite3')
+    if source_db.exists() and not sqlite_has_table(runtime_db, 'auth_user'):
+        shutil.copyfile(source_db, runtime_db)
+    return runtime_db
 
 
 # Quick-start development settings - unsuitable for production
@@ -107,7 +135,7 @@ WSGI_APPLICATION = 'PMS.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': database_path(),
     }
 }
 
