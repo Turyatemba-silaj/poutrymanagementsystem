@@ -1,0 +1,63 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Poultry Management{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'PoutryManagementSysyem/styles.css' %}">
+</head>
+<body class="admin-layout">
+    <aside class="app-sidebar" aria-label="Application navigation">
+        <a class="sidebar-brand" href="/">
+            <span>PF</span>
+            <strong>Poultry Farm</strong>
+        </a>
+        {% if user.is_authenticated %}
+            <div class="sidebar-user">
+                <span>{{ user.get_username }}</span>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
+            </div>
+        {% endif %}
+        <nav class="sidebar-nav">
+            <span class="nav-section">General</span>
+            <a href="/">Home</a>
+            <a href="{% url 'poultry:dashboard' %}">Dashboard</a>
+            <a href="{% url 'poultry:user_list' %}">Users</a>
+            <a href="{% url 'poultry:role_list' %}">Roles</a>
+            <span class="nav-section">Operations</span>
+            <a href="{% url 'poultry:record_list' 'houses' %}">Poultry Houses</a>
+            <a href="{% url 'poultry:record_list' 'flocks' %}">Flocks</a>
+            <a href="{% url 'poultry:record_list' 'purchases' %}">Purchases</a>
+            <a href="{% url 'poultry:record_list' 'feed-mixes' %}">Feed Mixes</a>
+            <a href="{% url 'poultry:record_list' 'feed-mix-details' %}">Feed Mixing Details</a>
+            <a href="{% url 'poultry:record_list' 'feed-consumption' %}">Feed Consumption</a>
+            <a href="{% url 'poultry:record_list' 'egg-production' %}">Egg Production</a>
+            <a href="{% url 'poultry:record_list' 'egg-prices' %}">Egg Prices</a>
+            <a href="{% url 'poultry:record_list' 'egg-sales' %}">Egg Sales</a>
+            <a href="{% url 'poultry:record_list' 'expenses' %}">Expenses</a>
+            <a href="{% url 'poultry:record_list' 'audit-logs' %}">Audit Logs</a>
+        </nav>
+    </aside>
+
+    <div class="app-shell">
+        <header class="app-topbar">
+            <div>
+                <div class="eyebrow">{% block eyebrow %}Farm management{% endblock %}</div>
+                <h1>{% block page_title %}Poultry Management{% endblock %}</h1>
+            </div>
+            <nav class="actions">
+                {% block page_actions %}{% endblock %}
+            </nav>
+        </header>
+
+        <main class="app-main">
+            {% include 'PoutryManagementSysyem/messages.html' %}
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

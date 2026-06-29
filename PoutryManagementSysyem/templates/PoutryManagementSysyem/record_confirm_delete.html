@@ -1,0 +1,21 @@
+{% extends 'PoutryManagementSysyem/base_app.html' %}
+
+{% block title %}Delete {{ config.singular }}{% endblock %}
+{% block eyebrow %}Delete record{% endblock %}
+{% block page_title %}Delete {{ config.singular }}{% endblock %}
+{% block page_actions %}
+    <a href="{% url 'poultry:record_detail' model_slug object.pk %}">Cancel</a>
+    <a href="{% url 'poultry:record_list' model_slug %}">Back to {{ config.title }}</a>
+{% endblock %}
+
+{% block content %}
+    <section class="delete-panel">
+        <h2>{{ object }}</h2>
+        <div class="delete-warning">This action will permanently remove this {{ config.singular|lower }} record.</div>
+        <form method="post">
+            {% csrf_token %}
+            <button class="danger-button" type="submit">Delete {{ config.singular }}</button>
+            <a href="{% url 'poultry:record_detail' model_slug object.pk %}">Keep Record</a>
+        </form>
+    </section>
+{% endblock %}

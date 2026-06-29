@@ -1,0 +1,200 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Poultry Farm Management</title>
+    <link rel="stylesheet" href="{% static 'PoutryManagementSysyem/styles.css' %}">
+</head>
+<body class="landing-page">
+    <header class="landing-nav">
+        <a class="brand" href="/">
+            <span class="brand-mark">PF</span>
+            <span>Poultry Farm</span>
+        </a>
+        <nav class="landing-actions" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#operations">Operations</a>
+            <a href="#contact">Contact</a>
+            <a href="{% url 'poultry:dashboard' %}">Dashboard</a>
+            <a class="nav-button" href="{% url 'poultry:crud_index' %}">Records</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="landing-hero" style="background-image: linear-gradient(90deg, rgba(10, 24, 18, .82), rgba(10, 24, 18, .42)), url('{% static 'PoutryManagementSysyem/images/poultry-hero.png' %}');">
+            <div class="hero-content">
+            </div>
+           
+        </section>
+
+        <section class="landing-section about-section" id="about">
+            <div class="section-intro">
+                <div>
+                    <div class="eyebrow">About the farm</div>
+                    <h2>Built for everyday poultry operations</h2>
+                </div>
+                <p>
+                    Poultry Farm brings the public face of the business together with the operational
+                    records the team uses every day. It is designed for clear farm oversight,
+                    faster data entry, and simple reporting.
+                </p>
+            </div>
+            <div class="about-grid">
+                <article>
+                    <span>01</span>
+                    <h3>Production Ready</h3>
+                    <p>Track daily egg collection, good eggs, broken eggs, and dirty eggs by flock.</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>Stock Aware</h3>
+                    <p>Monitor feed ingredients, purchases, consumption, and reorder levels.</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>Finance Focused</h3>
+                    <p>Review sales, income, expenses, purchases, and net profit summaries.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="landing-section service-section" id="services">
+            <div class="section-intro">
+                <div>
+                    <div class="eyebrow">Services</div>
+                    <h2>Core farm management areas</h2>
+                </div>
+                <a class="text-link" href="{% url 'poultry:crud_index' %}">View all records</a>
+            </div>
+            <div class="feature-grid">
+                <article>
+                    <span>Housing</span>
+                    <h3>Poultry Houses</h3>
+                    <p>Keep capacity, bird type, and house status organized for each unit.</p>
+                </article>
+                <article>
+                    <span>Flocks</span>
+                    <h3>Bird Management</h3>
+                    <p>Follow breeds, purchase dates, current birds, and flock status.</p>
+                </article>
+                <article>
+                    <span>Feed</span>
+                    <h3>Feed Mixing</h3>
+                    <p>Record feed mixes, ingredients, quantities, and total mix costs.</p>
+                </article>
+                <article>
+                    <span>Production</span>
+                    <h3>Egg Records</h3>
+                    <p>Capture daily egg production and recent collection history.</p>
+                </article>
+                <article>
+                    <span>Sales</span>
+                    <h3>Egg Sales</h3>
+                    <p>Track trays, eggs, rates, totals, and payment methods.</p>
+                </article>
+                <article>
+                    <span>Finance</span>
+                    <h3>Expenses</h3>
+                    <p>Manage operating costs and compare income against expenses.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="operations-band" id="operations">
+            <div>
+                <div class="eyebrow">Operations</div>
+                <h2>Start from the work you need to record</h2>
+            </div>
+            <div class="operation-links">
+                <a href="{% url 'poultry:record_create' 'flocks' %}">Add Flock</a>
+                <a href="{% url 'poultry:record_create' 'feed-consumption' %}">Record Feed Use</a>
+                <a href="{% url 'poultry:record_create' 'egg-sales' %}">Record Sale</a>
+                <a href="{% url 'poultry:record_create' 'expenses' %}">Record Expense</a>
+            </div>
+        </section>
+
+        <section class="landing-section split-section">
+            <div>
+                <div class="eyebrow">Why it works</div>
+                <h2>Clear information for faster farm decisions</h2>
+                <p>
+                    The site keeps operational data close to the people who need it. Farm teams can
+                    move from public information to dashboard reporting, stock checks, and daily
+                    recording without switching tools.
+                </p>
+            </div>
+            <div class="benefit-list">
+                <article>
+                    <span>Daily visibility</span>
+                    <strong>Live production and flock numbers</strong>
+                </article>
+                <article>
+                    <span>Stock control</span>
+                    <strong>Low-stock awareness before supplies run out</strong>
+                </article>
+                <article>
+                    <span>Business reporting</span>
+                    <strong>Income, expenses, and profit by period</strong>
+                </article>
+            </div>
+        </section>
+
+        <section class="landing-section process-section">
+            <div class="section-intro">
+                <div>
+                    <div class="eyebrow">Workflow</div>
+                    <h2>From farm activity to business reports</h2>
+                </div>
+            </div>
+            <div class="process-grid">
+                <article>
+                    <span>Step 1</span>
+                    <h3>Record Activity</h3>
+                    <p>Add flock, egg, feed, purchase, sale, income, and expense entries.</p>
+                </article>
+                <article>
+                    <span>Step 2</span>
+                    <h3>Monitor Stock</h3>
+                    <p>Use purchase records and low-stock signals to plan farm supplies.</p>
+                </article>
+                <article>
+                    <span>Step 3</span>
+                    <h3>Review Results</h3>
+                    <p>Open the dashboard to compare production, spending, income, and profit.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div>
+                <div class="eyebrow">Contact</div>
+                <h2>Ready to manage the farm?</h2>
+                <p>Use the dashboard for reporting or open records to manage operational data.</p>
+            </div>
+            <div class="contact-actions">
+                <a class="primary-button" href="{% url 'poultry:dashboard' %}">Open Dashboard</a>
+                <a class="secondary-button" href="{% url 'poultry:crud_index' %}">Manage Records</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <a class="brand" href="/">
+                <span class="brand-mark">PF</span>
+                <span>Poultry Farm</span>
+            </a>
+            <p>Farm website and poultry management system.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="{% url 'poultry:dashboard' %}">Dashboard</a>
+            <a href="{% url 'poultry:crud_index' %}">Records</a>
+        </nav>
+    </footer>
+</body>
+</html>

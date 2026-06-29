@@ -1,0 +1,56 @@
+{% extends 'PoutryManagementSysyem/base_app.html' %}
+
+{% block title %}Users{% endblock %}
+{% block eyebrow %}Authentication{% endblock %}
+{% block page_title %}Users{% endblock %}
+{% block page_actions %}
+    {% if can_add_user %}
+        <a href="{% url 'poultry:user_create' %}">Add User</a>
+    {% endif %}
+    {% if can_view_roles %}
+        <a href="{% url 'poultry:role_list' %}">Roles</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <section class="table-panel">
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Roles</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user_item in users %}
+                    <tr>
+                        <td>{{ user_item.username }}</td>
+                        <td>{{ user_item.get_full_name|default:"-" }}</td>
+                        <td>{{ user_item.email|default:"-" }}</td>
+                        <td>
+                            {% for group in user_item.groups.all %}
+                                {{ group.name }}{% if not forloop.last %}, {% endif %}
+                            {% empty %}
+                                -
+                            {% endfor %}
+                        </td>
+                        <td>{% if user_item.is_active %}Active{% else %}Inactive{% endif %}</td>
+                        <td class="table-actions">
+                            {% if can_change_user %}
+                                <a href="{% url 'poultry:user_assign_roles' user_item.pk %}">Assign Roles</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="6">No users found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

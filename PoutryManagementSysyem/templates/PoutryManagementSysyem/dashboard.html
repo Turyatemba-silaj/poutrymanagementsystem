@@ -1,0 +1,238 @@
+{% extends 'PoutryManagementSysyem/base_app.html' %}
+
+{% block title %}Dashboard{% endblock %}
+{% block eyebrow %}Farm operations{% endblock %}
+{% block page_title %}Poultry Business Dashboard{% endblock %}
+{% block page_actions %}
+    <a href="{% url 'poultry:record_create' 'egg-production' %}">Egg Production</a>
+    <a href="{% url 'poultry:record_create' 'egg-sales' %}">Egg Sale</a>
+    <a href="{% url 'poultry:record_create' 'purchases' %}">Purchase</a>
+{% endblock %}
+
+{% block content %}
+    <div class="dashboard-page">
+        <section class="dashboard-hero" aria-label="Overview">
+            <div>
+                <div class="eyebrow">Live farm position</div>
+                <h2>{{ selected_period_label }} Summary</h2>
+                <p>{{ snapshot.period_start }} to {{ snapshot.period_end }}</p>
+            </div>
+            <form method="get" class="report-form dashboard-filter">
+                <select name="period">
+                    {% for value, label in period_choices %}
+                        <option value="{{ value }}" {% if selected_period == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+                <input type="date" name="start" value="{{ selected_start }}">
+                <button type="submit">Run</button>
+            </form>
+        </section>
+
+        <section class="stats-grid dashboard-kpis" aria-label="Overview cards">
+            <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'houses' %}">
+                <span>Houses</span>
+                <strong>{{ houses_count }}</strong>
+            </a>
+            <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'flocks' %}">
+                <span>Active Flocks</span>
+                <strong>{{ active_flocks_count }}</strong>
+            </a>
+            <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'flocks' %}">
+                <span>Current Birds</span>
+                <strong>{{ current_birds|floatformat:0 }}</strong>
+            </a>
+            <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'feed-consumption' %}">
+                <span>Feed Used</span>
+                <strong>{{ feed_used|floatformat:2 }}</strong>
+            </a>
+            <a class="dashboard-card-link profit" href="{% url 'poultry:record_list' 'income' %}">
+                <span>Net Profit</span>
+                <strong>{{ snapshot.net_profit|floatformat:2 }}</strong>
+            </a>
+        </section>
+
+        <section class="report-panel dashboard-record-panel" aria-label="All record cards">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">Records</div>
+                    <h2>All Records</h2>
+                </div>
+            </div>
+            <div class="report-grid dashboard-record-grid">
+                {% for card in dashboard_record_cards %}
+                    <a class="dashboard-card-link" href="{% url 'poultry:record_list' card.slug %}">
+                        <span>{{ card.label }}</span>
+                        <strong>{{ card.value }}</strong>
+                    </a>
+                {% endfor %}
+            </div>
+        </section>
+
+        {% if low_stock_notifications %}
+            <section class="notification-panel" aria-label="Reorder notifications">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">Reorder alerts</div>
+                        <h2>Low Stock Notifications</h2>
+                    </div>
+                </div>
+                <div class="notification-list">
+                    {% for notification in low_stock_notifications %}
+                        <article>
+                            <strong>{{ notification.item_name }}</strong>
+                            <span>Balance: {{ notification.balance }}</span>
+                            <p>{{ notification.message }}</p>
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+
+        <section class="dashboard-chart-grid" aria-label="Dashboard charts">
+            <article class="chart-panel chart-panel-wide">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">Bar chart</div>
+                        <h2>Feed Consumption By Flock</h2>
+                    </div>
+                    <a href="{% url 'poultry:record_list' 'feed-consumption' %}">View</a>
+                </div>
+                <div class="horizontal-bars">
+                    {% for row in flock_feed_consumption %}
+                        <div class="horizontal-bar-row">
+                            <span><a href="{% url 'poultry:record_detail' 'flocks' row.flock_id %}">{{ row.flock }}</a></span>
+                            <div class="horizontal-bar-track">
+                                <div class="horizontal-bar-fill" style="width: {{ row.percent }}%"></div>
+                            </div>
+                            <strong>{{ row.quantity_display }}</strong>
+                        </div>
+                    {% empty %}
+                        <p class="empty-chart">No feed consumption recorded for this period.</p>
+                    {% endfor %}
+                </div>
+            </article>
+
+            <article class="chart-panel">
+                <div>
+                    <div class="eyebrow">Trend bar chart</div>
+                    <h2>Daily Feed Usage</h2>
+                </div>
+                <div class="trend-chart">
+                    {% for point in feed_trend %}
+                        <div class="trend-item" title="{{ point.label }}: {{ point.quantity_display }}">
+                            <div class="trend-bar" style="height: {{ point.percent }}%"></div>
+                            <span>{{ point.label }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </article>
+
+            <article class="chart-panel">
+                <div>
+                    <div class="eyebrow">Finance</div>
+                    <h2>Income vs Costs</h2>
+                </div>
+                <div class="finance-bars">
+                    {% for item in finance_chart %}
+                        <div class="finance-bar-row {{ item.class }}">
+                            <span>{{ item.label }}</span>
+                            <div class="finance-bar-track">
+                                <div class="finance-bar-fill" style="width: {{ item.percent }}%"></div>
+                            </div>
+                            <strong>{{ item.value_display }}</strong>
+                        </div>
+                    {% endfor %}
+                </div>
+            </article>
+        </section>
+
+        <section class="report-panel dashboard-summary-panel">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">Reports</div>
+                    <h2>{{ selected_period_label }} Summary</h2>
+                </div>
+            </div>
+
+            <div class="report-grid">
+                <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'egg-production' %}">
+                    <span>Eggs Collected</span>
+                    <strong>{{ eggs_collected|floatformat:0 }}</strong>
+                </a>
+                <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'egg-production' %}">
+                    <span>Good Eggs</span>
+                    <strong>{{ good_eggs|floatformat:0 }}</strong>
+                </a>
+                <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'egg-production' %}">
+                    <span>Broken / Dirty</span>
+                    <strong>{{ broken_eggs|floatformat:0 }} / {{ dirty_eggs|floatformat:0 }}</strong>
+                </a>
+                <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'egg-sales' %}">
+                    <span>Egg Sales</span>
+                    <strong>{{ egg_sales_total|floatformat:2 }}</strong>
+                </a>
+                <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'purchases' %}">
+                    <span>Purchases</span>
+                    <strong>{{ purchases_total|floatformat:2 }}</strong>
+                </a>
+                <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'income' %}">
+                    <span>Other Income</span>
+                    <strong>{{ other_income_total|floatformat:2 }}</strong>
+                </a>
+                <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'expenses' %}">
+                    <span>Expenses Paid</span>
+                    <strong>{{ expenses_total|floatformat:2 }}</strong>
+                </a>
+                <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'income' %}">
+                    <span>Total Income</span>
+                    <strong>{{ snapshot.total_income|floatformat:2 }}</strong>
+                </a>
+                <a class="dashboard-card-link" href="{% url 'poultry:record_list' 'expenses' %}">
+                    <span>Total Expenses</span>
+                    <strong>{{ snapshot.total_expenses|floatformat:2 }}</strong>
+                </a>
+            </div>
+        </section>
+
+        <section class="table-panel dashboard-consumption" aria-label="Flock feed consumption">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">Feed consumption</div>
+                    <h2>{{ selected_period_label }} Consumption By Flock</h2>
+                </div>
+                <a href="{% url 'poultry:record_list' 'feed-consumption' %}">View Feed Consumption</a>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Flock</th>
+                        <th>House</th>
+                        <th>Feed Used</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in flock_feed_consumption %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'poultry:record_detail' 'flocks' row.flock_id %}">{{ row.flock }}</a>
+                            </td>
+                            <td>{{ row.house }}</td>
+                            <td>{{ row.quantity_display }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="3">No feed consumption recorded for this period.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="quick-links dashboard-links" aria-label="Dashboard table links">
+            {% for link in dashboard_links %}
+                <a href="{% url 'poultry:record_list' link.slug %}">{{ link.label }}</a>
+            {% endfor %}
+        </section>
+    </div>
+{% endblock %}

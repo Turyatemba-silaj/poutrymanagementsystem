@@ -1,0 +1,82 @@
+{% extends 'PoutryManagementSysyem/base_app.html' %}
+
+{% block title %}{{ config.title }}{% endblock %}
+{% block eyebrow %}Manage records{% endblock %}
+{% block page_title %}{{ config.title }}{% endblock %}
+{% block page_actions %}
+    {% if can_add %}
+        <a href="{% url 'poultry:record_create' model_slug %}">Add {{ config.singular }}</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <section class="table-panel record-table record-table-{{ model_slug }}">
+        <table>
+            <colgroup>
+                {% for column in columns %}
+                    <col>
+                {% endfor %}
+                <col class="actions-col">
+            </colgroup>
+            <thead>
+                <tr>
+                    {% for column in columns %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        {% for item in row.values %}
+                            <td>{{ item.value|default:"-" }}</td>
+                        {% endfor %}
+                        <td class="table-actions">
+                            <a href="{% url 'poultry:record_detail' model_slug row.object.pk %}">View</a>
+                            {% if can_change %}
+                                <a href="{% url 'poultry:record_update' model_slug row.object.pk %}">Edit</a>
+                            {% endif %}
+                            {% if can_delete %}
+                                <a class="danger-link" href="{% url 'poultry:record_delete' model_slug row.object.pk %}">Delete</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="{{ columns|length|add:1 }}">No records found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            {% if total_row %}
+                <tfoot>
+                    <tr class="totals-row">
+                        {% if total_row.cells %}
+                            <th colspan="{{ total_row.label_colspan|default:1 }}">{{ total_row.label }}</th>
+                            {% for cell in total_row.cells %}
+                                <th>{{ cell }}</th>
+                            {% endfor %}
+                        {% else %}
+                            <th colspan="3">{{ total_row.label }}</th>
+                            <th>{{ total_row.quantity_display|default:total_row.quantity }}</th>
+                            <th>{{ total_row.unit_price_display|default:total_row.unit_price }}</th>
+                            <th>{{ total_row.total_price_display|default:total_row.total_price }}</th>
+                            <th></th>
+                        {% endif %}
+                    </tr>
+                </tfoot>
+            {% endif %}
+        </table>
+
+        {% if calculations %}
+            <div class="calculation-panel table-calculations" aria-label="Table calculations">
+                {% for item in calculations %}
+                    <article>
+                        <span>{{ item.label }}</span>
+                        <strong>{{ item.value }}</strong>
+                    </article>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}

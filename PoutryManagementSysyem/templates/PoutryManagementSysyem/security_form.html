@@ -1,0 +1,33 @@
+{% extends 'PoutryManagementSysyem/base_app.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block eyebrow %}{{ eyebrow }}{% endblock %}
+{% block page_title %}{{ title }}{% endblock %}
+{% block page_actions %}
+    <a href="{{ back_url }}">Back</a>
+{% endblock %}
+
+{% block content %}
+    <section class="form-panel security-panel">
+        <form method="post" class="record-form security-form" novalidate>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-grid security-form-grid">
+                {% for field in form %}
+                    <label class="{% if field.field.widget.input_type == 'checkbox' %}choice-field{% endif %}">
+                        <span>{{ field.label }}</span>
+                        {{ field }}
+                        {% if field.help_text %}
+                            <small>{{ field.help_text }}</small>
+                        {% endif %}
+                        {{ field.errors }}
+                    </label>
+                {% endfor %}
+            </div>
+            <div class="form-actions">
+                <button type="submit">{{ button_label }}</button>
+                <a href="{{ back_url }}">Cancel</a>
+            </div>
+        </form>
+    </section>
+{% endblock %}

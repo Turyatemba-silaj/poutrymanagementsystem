@@ -1,0 +1,22 @@
+{% extends 'PoutryManagementSysyem/base_app.html' %}
+
+{% block title %}Farm Records{% endblock %}
+{% block eyebrow %}CRUD operations{% endblock %}
+{% block page_title %}Farm Records{% endblock %}
+{% block page_actions %}
+    <a href="{% url 'poultry:dashboard' %}">Dashboard</a>
+{% endblock %}
+
+{% block content %}
+    <section class="record-grid" aria-label="Record types">
+        {% for slug, config in configs.items %}
+            <article>
+                <h2>{{ config.title }}</h2>
+                <div class="record-actions">
+                    <a href="{% url 'poultry:record_list' slug %}">View</a>
+                    <a href="{% url 'poultry:record_create' slug %}">Add</a>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

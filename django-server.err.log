@@ -1,0 +1,713 @@
+Watching for file changes with StatReloader
+[28/Jun/2026 10:29:00] "GET /dashboard/ HTTP/1.1" 200 12976
+[28/Jun/2026 10:29:17] "GET /dashboard/?period=Daily&start=2026-06-28 HTTP/1.1" 200 12976
+[28/Jun/2026 10:29:23] "GET /records/houses/add/ HTTP/1.1" 200 3845
+[28/Jun/2026 10:29:27] "POST /records/houses/add/ HTTP/1.1" 200 4268
+[28/Jun/2026 10:29:40] "GET /records/houses/ HTTP/1.1" 200 5870
+[28/Jun/2026 10:29:55] "GET /records/ HTTP/1.1" 200 4988
+[28/Jun/2026 10:29:59] "GET /records/feed-mix-details/ HTTP/1.1" 200 6962
+[28/Jun/2026 10:30:42] "GET /records/ HTTP/1.1" 200 4988
+[28/Jun/2026 10:30:47] "GET /records/flocks/ HTTP/1.1" 200 6714
+[28/Jun/2026 10:31:16] "GET /records/ HTTP/1.1" 200 4988
+[28/Jun/2026 10:31:20] "GET /records/purchases/ HTTP/1.1" 200 6786
+[28/Jun/2026 10:31:50] "GET /records/ HTTP/1.1" 200 4988
+[28/Jun/2026 10:31:54] "GET /records/egg-production/ HTTP/1.1" 200 6867
+[28/Jun/2026 10:32:16] "GET /records/egg-production/5/ HTTP/1.1" 200 3150
+[28/Jun/2026 10:32:25] "GET /records/egg-production/5/edit/ HTTP/1.1" 200 4367
+[28/Jun/2026 10:32:34] "GET /dashboard/ HTTP/1.1" 200 12976
+[28/Jun/2026 10:32:36] "GET /dashboard/ HTTP/1.1" 200 12976
+[28/Jun/2026 10:32:38] "GET / HTTP/1.1" 200 3419
+[28/Jun/2026 10:32:38] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 304 0
+[28/Jun/2026 10:47:04] "GET / HTTP/1.1" 200 9380
+[28/Jun/2026 10:47:04,522] - Broken pipe from ('127.0.0.1', 54944)
+[28/Jun/2026 10:47:05] "GET / HTTP/1.1" 200 9380
+[28/Jun/2026 10:47:05,705] - Broken pipe from ('127.0.0.1', 54947)
+[28/Jun/2026 10:47:20] "GET /?sitecheck=1 HTTP/1.1" 200 9380
+[28/Jun/2026 10:47:21] "GET /?sitecheck=1 HTTP/1.1" 200 9380
+[28/Jun/2026 10:47:21] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 18991
+[28/Jun/2026 10:47:21] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 200 2296789
+[28/Jun/2026 10:47:21] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 18991
+Not Found: /favicon.ico
+[28/Jun/2026 10:47:21] "GET /favicon.ico HTTP/1.1" 404 4466
+[28/Jun/2026 10:47:21] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 200 2296789
+Not Found: /favicon.ico
+[28/Jun/2026 10:47:21] "GET /favicon.ico HTTP/1.1" 404 4466
+[28/Jun/2026 10:47:41] "GET /?sitecheck=2 HTTP/1.1" 200 9380
+[28/Jun/2026 10:47:41] "GET /?sitecheck=2 HTTP/1.1" 200 9380
+[28/Jun/2026 10:47:41] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 18991
+[28/Jun/2026 10:47:41] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 200 2296789
+[28/Jun/2026 10:47:42] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 18991
+Not Found: /favicon.ico
+[28/Jun/2026 10:47:42] "GET /favicon.ico HTTP/1.1" 404 4466
+[28/Jun/2026 10:47:42] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 200 2296789
+Not Found: /favicon.ico
+[28/Jun/2026 10:47:42] "GET /favicon.ico HTTP/1.1" 404 4466
+[28/Jun/2026 10:48:24] "GET /?sitecheck=3 HTTP/1.1" 200 9380
+[28/Jun/2026 10:48:24] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 19315
+[28/Jun/2026 10:48:24] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 200 2296789
+Not Found: /favicon.ico
+[28/Jun/2026 10:48:24] "GET /favicon.ico HTTP/1.1" 404 4466
+[28/Jun/2026 10:49:07] "GET /?sitecheck=4 HTTP/1.1" 200 9380
+[28/Jun/2026 10:49:07] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 19483
+[28/Jun/2026 10:49:07] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 200 2296789
+Not Found: /favicon.ico
+[28/Jun/2026 10:49:07] "GET /favicon.ico HTTP/1.1" 404 4466
+[28/Jun/2026 10:49:57] "GET /?sitecheck=5 HTTP/1.1" 200 9380
+[28/Jun/2026 10:49:57] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 19638
+[28/Jun/2026 10:49:57] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 200 2296789
+Not Found: /favicon.ico
+[28/Jun/2026 10:49:58] "GET /favicon.ico HTTP/1.1" 404 4466
+[28/Jun/2026 10:50:40] "GET /?sitecheck=6 HTTP/1.1" 200 9380
+[28/Jun/2026 10:50:40] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 19860
+[28/Jun/2026 10:50:40] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 200 2296789
+Not Found: /favicon.ico
+[28/Jun/2026 10:50:40] "GET /favicon.ico HTTP/1.1" 404 4466
+[28/Jun/2026 10:51:14] "GET /?metriccheck=1 HTTP/1.1" 200 9380
+[28/Jun/2026 10:51:15] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 19860
+[28/Jun/2026 10:51:15] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 200 2296789
+Not Found: /favicon.ico
+[28/Jun/2026 10:51:15] "GET /favicon.ico HTTP/1.1" 404 4466
+[28/Jun/2026 10:51:55] "GET /?metriccheck=2 HTTP/1.1" 200 9380
+[28/Jun/2026 10:51:55] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 19860
+[28/Jun/2026 10:51:55] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 200 2296789
+Not Found: /favicon.ico
+[28/Jun/2026 10:51:55] "GET /favicon.ico HTTP/1.1" 404 4466
+[28/Jun/2026 10:52:14] "GET / HTTP/1.1" 200 9380
+[28/Jun/2026 10:52:15,081] - Broken pipe from ('127.0.0.1', 58216)
+[28/Jun/2026 10:52:34] "GET / HTTP/1.1" 200 9380
+[28/Jun/2026 10:53:49] "GET /dashboard/ HTTP/1.1" 200 12976
+[28/Jun/2026 10:54:02] "GET /records/feed-consumption/add/ HTTP/1.1" 200 4929
+[28/Jun/2026 10:54:41] "GET /records/feed-consumption/ HTTP/1.1" 200 6662
+[28/Jun/2026 10:55:03] "GET /dashboard/ HTTP/1.1" 200 12976
+[28/Jun/2026 10:55:47] "GET /records/feed-mix-details/add/ HTTP/1.1" 200 4534
+[28/Jun/2026 11:01:20] "GET /records/feed-mix-details/ HTTP/1.1" 200 6962
+[28/Jun/2026 11:01:57] "GET /records/ HTTP/1.1" 200 4988
+[28/Jun/2026 11:01:59] "GET /records/houses/add/ HTTP/1.1" 200 3845
+[28/Jun/2026 11:09:19] "POST /records/houses/add/ HTTP/1.1" 302 0
+[28/Jun/2026 11:09:19] "GET /records/houses/6/ HTTP/1.1" 200 2951
+[28/Jun/2026 11:09:28] "GET /records/houses/ HTTP/1.1" 200 6549
+[28/Jun/2026 11:09:44] "GET /records/houses/6/ HTTP/1.1" 200 2805
+[28/Jun/2026 11:09:48] "GET /records/houses/ HTTP/1.1" 200 6549
+[28/Jun/2026 11:10:14] "GET /records/ HTTP/1.1" 200 4988
+[28/Jun/2026 11:11:38] "GET /dashboard/ HTTP/1.1" 200 4904
+[28/Jun/2026 11:11:38,195] - Broken pipe from ('127.0.0.1', 49364)
+[28/Jun/2026 11:12:28] "GET /records/ HTTP/1.1" 200 4988
+[28/Jun/2026 11:12:36] "GET /records/ HTTP/1.1" 200 4988
+[28/Jun/2026 11:13:05] "GET / HTTP/1.1" 200 9380
+[28/Jun/2026 11:13:15] "GET /dashboard/ HTTP/1.1" 200 4904
+[28/Jun/2026 11:13:40] "GET /records/ HTTP/1.1" 200 4988
+[28/Jun/2026 11:15:17] "GET /dashboard/ HTTP/1.1" 200 4860
+[28/Jun/2026 11:15:17,226] - Broken pipe from ('127.0.0.1', 55804)
+[28/Jun/2026 11:15:47] "GET /records/ HTTP/1.1" 200 4944
+[28/Jun/2026 11:17:35] "GET /dashboard/?period=Weekly&start=2026-06-28 HTTP/1.1" 200 4860
+[28/Jun/2026 11:19:45] "GET /records/egg-sales/add/ HTTP/1.1" 200 4024
+[28/Jun/2026 11:20:39] "POST /records/egg-sales/add/ HTTP/1.1" 302 0
+[28/Jun/2026 11:20:40] "GET /records/egg-sales/6/ HTTP/1.1" 200 3200
+[28/Jun/2026 11:20:44] "GET /records/egg-sales/ HTTP/1.1" 200 7543
+[28/Jun/2026 11:21:06] "GET /records/egg-sales/add/ HTTP/1.1" 200 4024
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 11:45:14] "GET / HTTP/1.1" 200 9380
+[28/Jun/2026 11:45:26] "GET / HTTP/1.1" 200 9380
+[28/Jun/2026 11:45:33] "GET /dashboard/ HTTP/1.1" 200 4872
+[28/Jun/2026 11:45:56] "GET /records/egg-sales/ HTTP/1.1" 200 7543
+[28/Jun/2026 11:46:01] "GET /records/egg-sales/4/ HTTP/1.1" 200 3065
+[28/Jun/2026 11:46:04] "GET /records/egg-sales/4/edit/ HTTP/1.1" 200 10481
+[28/Jun/2026 11:49:24] "POST /records/egg-sales/4/edit/ HTTP/1.1" 302 0
+[28/Jun/2026 11:49:24] "GET /records/egg-sales/4/ HTTP/1.1" 200 3207
+[28/Jun/2026 11:50:24] "POST /records/egg-sales/add/ HTTP/1.1" 302 0
+[28/Jun/2026 11:50:24] "GET /records/egg-sales/7/ HTTP/1.1" 200 3197
+[28/Jun/2026 11:50:49] "GET /records/egg-sales/ HTTP/1.1" 200 8380
+[28/Jun/2026 11:51:23] "GET /records/ HTTP/1.1" 200 4944
+[28/Jun/2026 11:51:33] "GET /records/houses/ HTTP/1.1" 200 6505
+[28/Jun/2026 11:51:36] "GET /records/ HTTP/1.1" 200 4944
+[28/Jun/2026 11:51:41] "GET /records/houses/ HTTP/1.1" 200 6505
+[28/Jun/2026 12:07:55] "GET /records/egg-sales/add/ HTTP/1.1" 200 10456
+[28/Jun/2026 12:07:55,330] - Broken pipe from ('127.0.0.1', 62032)
+[28/Jun/2026 12:08:11] "GET /records/egg-sales/add/?balanced=1 HTTP/1.1" 200 10456
+[28/Jun/2026 12:08:12] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 21226
+Not Found: /favicon.ico
+[28/Jun/2026 12:08:12] "GET /favicon.ico HTTP/1.1" 404 4466
+[28/Jun/2026 12:08:41] "GET /records/houses/ HTTP/1.1" 200 6505
+[28/Jun/2026 12:14:56] "GET /records/ HTTP/1.1" 200 4944
+[28/Jun/2026 12:15:00] "GET /records/inventory/ HTTP/1.1" 200 5850
+[28/Jun/2026 12:15:21] "GET /records/ HTTP/1.1" 200 4944
+[28/Jun/2026 12:15:27] "GET /records/flocks/ HTTP/1.1" 200 6670
+[28/Jun/2026 12:16:43] "GET /records/ HTTP/1.1" 200 4944
+[28/Jun/2026 12:16:49] "GET /records/purchases/ HTTP/1.1" 200 6742
+[28/Jun/2026 12:17:46] "GET /records/purchases/6/edit/ HTTP/1.1" 200 4910
+[28/Jun/2026 12:18:44] "GET /records/purchases/ HTTP/1.1" 200 6742
+[28/Jun/2026 12:20:05] "GET /records/egg-sales/ HTTP/1.1" 200 8380
+[28/Jun/2026 12:20:12] "GET /records/egg-sales/4/ HTTP/1.1" 200 3066
+[28/Jun/2026 12:20:22] "GET /records/egg-sales/ HTTP/1.1" 200 8380
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 13:29:39] "GET / HTTP/1.1" 200 9380
+[28/Jun/2026 13:29:47] "GET /dashboard/ HTTP/1.1" 200 4872
+[28/Jun/2026 13:31:37] "GET /dashboard/ HTTP/1.1" 200 4277
+[28/Jun/2026 13:31:37,604] - Broken pipe from ('127.0.0.1', 52169)
+[28/Jun/2026 13:38:47] "GET /dashboard/ HTTP/1.1" 200 4277
+[28/Jun/2026 13:38:48] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 21226
+[28/Jun/2026 13:39:09] "GET /dashboard/?period=Weekly&start=2026-06-28 HTTP/1.1" 200 4277
+[28/Jun/2026 13:39:15] "GET /records/egg-sales/add/ HTTP/1.1" 200 10456
+[28/Jun/2026 13:40:09] "GET /records/egg-production/ HTTP/1.1" 200 7200
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 13:50:41] "GET /records/egg-sales/add/ HTTP/1.1" 200 12173
+[28/Jun/2026 13:50:41,799] - Broken pipe from ('127.0.0.1', 59128)
+[28/Jun/2026 13:51:16] "GET /records/egg-sales/add/ HTTP/1.1" 200 12173
+[28/Jun/2026 13:51:16] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 21317
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 14:21:41] "GET /payments/mobile-money/providers/ HTTP/1.1" 200 320
+[28/Jun/2026 14:21:41,826] - Broken pipe from ('127.0.0.1', 54716)
+[28/Jun/2026 14:22:18] "GET /records/egg-sales/add/ HTTP/1.1" 200 18278
+[28/Jun/2026 14:22:18] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 14:22:33] "GET /payments/mobile-money/providers/ HTTP/1.1" 200 320
+[28/Jun/2026 14:22:40] "POST /payments/mobile-money/request/ HTTP/1.1" 200 235
+[28/Jun/2026 14:22:40] "GET /payments/mobile-money/status/SIMULATOR-20260628112240-D60FD7CA/ HTTP/1.1" 200 168
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\payment_gateways.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 14:53:48] "GET / HTTP/1.1" 200 9378
+[28/Jun/2026 14:53:49] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 14:53:49] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 304 0
+[28/Jun/2026 14:53:56] "GET /records/egg-production/add/ HTTP/1.1" 200 4070
+[28/Jun/2026 14:54:02] "POST /records/egg-production/add/ HTTP/1.1" 200 4203
+[28/Jun/2026 14:54:02] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 14:54:05] "GET /records/egg-production/ HTTP/1.1" 200 2744
+[28/Jun/2026 14:54:14] "GET /records/flocks/ HTTP/1.1" 200 2704
+[28/Jun/2026 14:54:14] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 14:54:18] "GET /records/houses/ HTTP/1.1" 200 3206
+[28/Jun/2026 14:54:54] "GET /records/flocks/ HTTP/1.1" 200 2704
+[28/Jun/2026 14:54:54] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 14:54:57] "GET /records/flocks/add/ HTTP/1.1" 200 4719
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 14:59:20] "GET /records/flocks/add/ HTTP/1.1" 200 5174
+[28/Jun/2026 14:59:20,547] - Broken pipe from ('127.0.0.1', 57089)
+[28/Jun/2026 15:01:14] "GET /records/flocks/add/ HTTP/1.1" 200 5174
+[28/Jun/2026 15:01:14] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 15:02:00] "POST /records/flocks/add/ HTTP/1.1" 200 5342
+[28/Jun/2026 15:02:07] "POST /records/flocks/add/ HTTP/1.1" 302 0
+[28/Jun/2026 15:02:07] "GET /records/flocks/6/ HTTP/1.1" 200 3363
+[28/Jun/2026 15:03:32] "GET /records/egg-sales/ HTTP/1.1" 200 2849
+[28/Jun/2026 15:03:32] "GET /records/flocks/ HTTP/1.1" 200 3456
+[28/Jun/2026 15:03:34] "GET /records/flocks/?compact_all=1 HTTP/1.1" 200 3456
+[28/Jun/2026 15:03:34] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 21617
+Not Found: /favicon.ico
+[28/Jun/2026 15:03:34] "GET /favicon.ico HTTP/1.1" 404 5387
+[28/Jun/2026 15:03:35] "GET /records/feed-mix-details/ HTTP/1.1" 200 3024
+[28/Jun/2026 15:03:35,465] - Broken pipe from ('127.0.0.1', 62414)
+[28/Jun/2026 15:04:17] "GET /records/flocks/6/ HTTP/1.1" 200 3225
+[28/Jun/2026 15:04:17] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 21617
+[28/Jun/2026 15:04:26] "GET /records/flocks/ HTTP/1.1" 200 3456
+[28/Jun/2026 15:04:26] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 15:04:44] "GET /records/flocks/add/ HTTP/1.1" 200 5174
+[28/Jun/2026 15:04:45] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 15:06:28] "GET /records/egg-sales/add/ HTTP/1.1" 200 18509
+[28/Jun/2026 15:06:29] "GET /records/egg-sales/add/?forms_compact=1 HTTP/1.1" 200 18509
+[28/Jun/2026 15:06:29] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 21598
+Not Found: /favicon.ico
+[28/Jun/2026 15:06:29] "GET /favicon.ico HTTP/1.1" 404 5387
+[28/Jun/2026 15:06:30] "GET /records/flocks/add/ HTTP/1.1" 200 5174
+[28/Jun/2026 15:06:30] "GET /records/purchases/add/ HTTP/1.1" 200 4588
+[28/Jun/2026 15:06:30,728] - Broken pipe from ('127.0.0.1', 58214)
+[28/Jun/2026 15:08:46] "GET /records/flocks/add/ HTTP/1.1" 200 5174
+[28/Jun/2026 15:08:46] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 21598
+[28/Jun/2026 15:09:32] "POST /records/flocks/add/ HTTP/1.1" 302 0
+[28/Jun/2026 15:09:32] "GET /records/flocks/7/ HTTP/1.1" 200 3379
+[28/Jun/2026 15:09:32] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 15:24:16] "GET / HTTP/1.1" 200 9380
+[28/Jun/2026 15:24:16] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 15:24:20] "GET /dashboard/ HTTP/1.1" 200 4323
+[28/Jun/2026 15:24:31] "GET /dashboard/?period=Daily&start=2026-06-28 HTTP/1.1" 200 4323
+[28/Jun/2026 15:24:41] "GET /dashboard/ HTTP/1.1" 200 4323
+[28/Jun/2026 15:27:36] "GET /records/houses/ HTTP/1.1" 200 3206
+[28/Jun/2026 15:27:36] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 15:33:53] "GET /records/egg-sales/ HTTP/1.1" 200 2849
+[28/Jun/2026 15:33:53,744] - Broken pipe from ('127.0.0.1', 62738)
+[28/Jun/2026 15:34:15] "GET /records/houses/ HTTP/1.1" 200 3206
+[28/Jun/2026 15:34:15] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 21599
+[28/Jun/2026 15:34:46] "GET /records/flocks/ HTTP/1.1" 200 4347
+[28/Jun/2026 15:34:46] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 15:36:01] "GET /records/flocks/ HTTP/1.1" 200 4347
+[28/Jun/2026 15:36:01,192] - Broken pipe from ('127.0.0.1', 50165)
+[28/Jun/2026 15:36:35] "GET /records/flocks/ HTTP/1.1" 200 4347
+[28/Jun/2026 15:36:35] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 22092
+[28/Jun/2026 15:36:52] "GET /records/flocks/ HTTP/1.1" 200 4347
+[28/Jun/2026 15:36:52] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 22092
+Not Found: /favicon.ico
+[28/Jun/2026 15:36:52] "GET /favicon.ico HTTP/1.1" 404 5387
+[28/Jun/2026 15:36:57] "GET /records/flocks/ HTTP/1.1" 200 4347
+[28/Jun/2026 15:36:57] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 22092
+Not Found: /favicon.ico
+[28/Jun/2026 15:36:57] "GET /favicon.ico HTTP/1.1" 404 5387
+[28/Jun/2026 15:39:28] "GET /records/flocks/ HTTP/1.1" 200 4754
+[28/Jun/2026 15:39:29] "GET /records/flocks/?actions_fixed=1 HTTP/1.1" 200 4754
+[28/Jun/2026 15:39:29] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 22247
+Not Found: /favicon.ico
+[28/Jun/2026 15:39:29] "GET /favicon.ico HTTP/1.1" 404 5387
+[28/Jun/2026 15:39:29,894] - Broken pipe from ('127.0.0.1', 52511)
+[28/Jun/2026 15:40:08] "GET /records/flocks/ HTTP/1.1" 200 4754
+[28/Jun/2026 15:40:08] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 22247
+[28/Jun/2026 15:40:13] "GET /records/flocks/6/ HTTP/1.1" 200 3225
+[28/Jun/2026 15:40:34] "GET /records/flocks/ HTTP/1.1" 200 4754
+[28/Jun/2026 15:40:34] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 15:42:08] "GET /records/flocks/ HTTP/1.1" 200 4754
+[28/Jun/2026 15:42:08] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 15:42:10] "GET /records/inventory/ HTTP/1.1" 200 2919
+[28/Jun/2026 15:42:15] "GET /records/inventory/add/ HTTP/1.1" 200 3907
+[28/Jun/2026 15:43:10] "GET /records/flocks/ HTTP/1.1" 200 4754
+[28/Jun/2026 15:43:10,242] - Broken pipe from ('127.0.0.1', 56973)
+[28/Jun/2026 15:44:05] "GET /records/inventory/add/ HTTP/1.1" 200 3907
+[28/Jun/2026 15:44:05] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 15:44:08] "GET /records/inventory/ HTTP/1.1" 200 2919
+[28/Jun/2026 15:44:11] "GET /records/houses/ HTTP/1.1" 200 3527
+[28/Jun/2026 15:44:13] "GET /records/flocks/ HTTP/1.1" 200 4754
+[28/Jun/2026 15:44:21] "GET /records/flocks/add/ HTTP/1.1" 200 5174
+[28/Jun/2026 15:44:53] "POST /records/flocks/add/ HTTP/1.1" 302 0
+[28/Jun/2026 15:44:53] "GET /records/flocks/3/ HTTP/1.1" 200 3387
+[28/Jun/2026 15:44:53] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 15:45:04] "GET /records/flocks/ HTTP/1.1" 200 5650
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 15:48:50] "GET /records/flocks/ HTTP/1.1" 200 5947
+[28/Jun/2026 15:48:50,903] - Broken pipe from ('127.0.0.1', 49853)
+[28/Jun/2026 15:49:19] "GET /records/flocks/ HTTP/1.1" 200 5947
+[28/Jun/2026 15:49:19] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\programimg\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\programimg\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\management\base.py", line 573, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+<class 'PoutryManagementSysyem.admin.FlockAdmin'>: (admin.E108) The value of 'list_display[5]' refers to 'status', which is not a callable or attribute of 'FlockAdmin', or an attribute, method, or field on 'PoutryManagementSysyem.Flock'.
+<class 'PoutryManagementSysyem.admin.FlockAdmin'>: (admin.E116) The value of 'list_filter[0]' refers to 'status', which does not refer to a Field.
+
+System check identified 2 issues (0 silenced).
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\programimg\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\programimg\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\management\base.py", line 573, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+<class 'PoutryManagementSysyem.admin.FlockAdmin'>: (admin.E108) The value of 'list_display[5]' refers to 'status', which is not a callable or attribute of 'FlockAdmin', or an attribute, method, or field on 'PoutryManagementSysyem.Flock'.
+<class 'PoutryManagementSysyem.admin.FlockAdmin'>: (admin.E116) The value of 'list_filter[0]' refers to 'status', which does not refer to a Field.
+
+System check identified 2 issues (0 silenced).
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 17:00:14] "GET / HTTP/1.1" 200 9375
+[28/Jun/2026 17:00:14] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[28/Jun/2026 17:00:14] "GET /favicon.ico HTTP/1.1" 404 5387
+[28/Jun/2026 17:00:29] "GET /dashboard/ HTTP/1.1" 200 4281
+[28/Jun/2026 17:00:29] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 17:00:51] "GET /records/feed-mixes/ HTTP/1.1" 200 3228
+[28/Jun/2026 17:00:51] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 17:00:56] "GET /records/feed-mixes/add/ HTTP/1.1" 200 3348
+[28/Jun/2026 17:01:15] "GET /records/feed-mixes/ HTTP/1.1" 200 3228
+[28/Jun/2026 17:01:15] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 17:01:33] "GET /records/feed-mix-details/ HTTP/1.1" 200 3362
+[28/Jun/2026 17:02:59] "GET /records/feed-mixes/ HTTP/1.1" 200 3228
+[28/Jun/2026 17:02:59] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 17:11:15] "GET /records/feed-mixes/add/ HTTP/1.1" 200 6578
+[28/Jun/2026 17:11:15] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 17:11:54] "POST /records/feed-mixes/add/ HTTP/1.1" 302 0
+[28/Jun/2026 17:11:54] "GET /records/feed-mixes/1/ HTTP/1.1" 200 2965
+[28/Jun/2026 17:11:57] "GET /records/feed-mixes/ HTTP/1.1" 200 3931
+[28/Jun/2026 17:12:14] "GET /records/feed-mix-details/ HTTP/1.1" 200 3362
+[28/Jun/2026 17:12:30] "GET /records/feed-mix-details/add/ HTTP/1.1" 200 5091
+[28/Jun/2026 17:12:48] "POST /records/feed-mix-details/add/ HTTP/1.1" 302 0
+[28/Jun/2026 17:12:48] "GET /records/feed-mix-details/1/ HTTP/1.1" 200 3431
+[28/Jun/2026 17:12:48] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 17:12:56] "GET /records/feed-mix-details/ HTTP/1.1" 200 4129
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 17:30:38] "GET /records/feed-mixes/ HTTP/1.1" 200 4489
+[28/Jun/2026 17:30:39] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 24854
+[28/Jun/2026 17:31:17] "GET /records/feed-mixes/add/ HTTP/1.1" 200 6583
+[28/Jun/2026 17:31:17] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 17:32:04] "GET /records/purchases/ HTTP/1.1" 200 3866
+[28/Jun/2026 17:32:04] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 17:32:08] "GET /records/purchases/add/ HTTP/1.1" 200 8286
+[28/Jun/2026 17:32:28] "POST /records/purchases/add/ HTTP/1.1" 302 0
+[28/Jun/2026 17:32:28] "GET /records/purchases/2/ HTTP/1.1" 200 3626
+[28/Jun/2026 17:32:28] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 17:32:42] "GET /records/purchases/ HTTP/1.1" 200 4777
+[28/Jun/2026 17:33:05] "GET /records/feed-mixes/ HTTP/1.1" 200 4489
+[28/Jun/2026 17:33:05] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 17:33:23] "GET /records/feed-mixes/1/edit/ HTTP/1.1" 200 6726
+[28/Jun/2026 17:34:03] "GET /records/feed-mixes/ HTTP/1.1" 200 4489
+[28/Jun/2026 17:34:03] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[28/Jun/2026 17:34:21] "GET /records/feed-mixes/ HTTP/1.1" 200 4489
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 17:56:28] "GET / HTTP/1.1" 200 9375
+Not Found: /favicon.ico
+[28/Jun/2026 17:56:28] "GET /favicon.ico HTTP/1.1" 404 5387
+[28/Jun/2026 17:56:34] "GET /dashboard/ HTTP/1.1" 200 4945
+[28/Jun/2026 17:56:57] "GET /records/feed-mixes/ HTTP/1.1" 200 4475
+[28/Jun/2026 17:57:05] "GET /records/feed-mixes/ HTTP/1.1" 200 4475
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 19:16:35] "GET / HTTP/1.1" 200 9375
+[28/Jun/2026 19:16:35] "GET / HTTP/1.1" 200 9375
+[28/Jun/2026 19:16:35] "GET / HTTP/1.1" 200 9375
+Not Found: /favicon.ico
+[28/Jun/2026 19:16:36] "GET /favicon.ico HTTP/1.1" 404 5387
+[28/Jun/2026 19:17:19] "GET / HTTP/1.1" 200 9375
+Not Found: /favicon.ico
+[28/Jun/2026 19:17:20] "GET /favicon.ico HTTP/1.1" 404 5387
+[28/Jun/2026 19:17:30] "GET /dashboard/ HTTP/1.1" 200 4964
+[28/Jun/2026 19:17:39] "GET /records/feed-mixes/ HTTP/1.1" 200 4772
+[28/Jun/2026 19:17:42] "GET /records/feed-mixes/ HTTP/1.1" 200 4772
+[28/Jun/2026 19:17:46] "GET /records/feed-mixes/add/ HTTP/1.1" 200 8145
+[28/Jun/2026 19:18:09] "GET /records/purchases/ HTTP/1.1" 200 4781
+[28/Jun/2026 19:18:14] "GET /records/purchases/add/ HTTP/1.1" 200 10523
+[28/Jun/2026 19:18:40] "POST /records/purchases/add/ HTTP/1.1" 302 0
+[28/Jun/2026 19:18:40] "GET /records/purchases/3/ HTTP/1.1" 200 3650
+[28/Jun/2026 19:18:42] "GET /records/purchases/ HTTP/1.1" 200 5692
+[28/Jun/2026 19:18:49] "GET /records/purchases/add/ HTTP/1.1" 200 10523
+[28/Jun/2026 19:19:06] "POST /records/purchases/add/ HTTP/1.1" 302 0
+[28/Jun/2026 19:19:06] "GET /records/purchases/4/ HTTP/1.1" 200 3656
+[28/Jun/2026 19:19:16] "GET /records/feed-mixes/ HTTP/1.1" 200 4772
+[28/Jun/2026 19:19:20] "GET /records/feed-mixes/add/ HTTP/1.1" 200 8242
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 21:06:05] "GET / HTTP/1.1" 200 9375
+[28/Jun/2026 21:06:05] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[28/Jun/2026 21:06:05] "GET /favicon.ico HTTP/1.1" 404 5387
+[28/Jun/2026 21:06:09] "GET /dashboard/ HTTP/1.1" 200 4964
+[28/Jun/2026 21:06:26] "GET /records/feed-mixes/ HTTP/1.1" 200 4781
+[28/Jun/2026 21:06:30] "GET /records/feed-mixes/add/ HTTP/1.1" 200 24939
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[28/Jun/2026 21:08:25] "GET /records/feed-mixes/add/ HTTP/1.1" 200 25120
+[28/Jun/2026 21:10:18] "POST /records/feed-mixes/add/ HTTP/1.1" 302 0
+[28/Jun/2026 21:10:18] "GET /records/feed-mixes/4/ HTTP/1.1" 200 3258
+[28/Jun/2026 21:10:22] "GET /records/feed-mixes/ HTTP/1.1" 200 5716
+[28/Jun/2026 21:11:11] "GET /records/feed-mix-details/ HTTP/1.1" 200 5039
+[28/Jun/2026 21:11:40] "GET /records/feed-mix-details/ HTTP/1.1" 200 5039
+[29/Jun/2026 10:25:29] "GET /records/feed-mix-details/add/ HTTP/1.1" 200 7463
+[29/Jun/2026 10:25:30] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 10:25:49] "GET /records/feed-mixes/ HTTP/1.1" 200 5716
+[29/Jun/2026 10:26:16] "GET /records/feed-mixes/3/delete/ HTTP/1.1" 200 2346
+[29/Jun/2026 10:26:18] "POST /records/feed-mixes/3/delete/ HTTP/1.1" 302 0
+[29/Jun/2026 10:26:18] "GET /records/feed-mixes/3/ HTTP/1.1" 200 3270
+[29/Jun/2026 10:26:31] "GET /records/feed-mixes/3/edit/ HTTP/1.1" 200 25114
+[29/Jun/2026 10:28:29] "GET /dashboard/ HTTP/1.1" 200 4934
+[29/Jun/2026 10:28:32] "GET /records/houses/ HTTP/1.1" 200 3495
+[29/Jun/2026 10:28:34] "GET /records/flocks/ HTTP/1.1" 200 5931
+[29/Jun/2026 10:29:01] "GET /records/feed-mix-details/ HTTP/1.1" 200 5039
+[29/Jun/2026 10:29:04] "GET /records/feed-mix-details/ HTTP/1.1" 200 5039
+[29/Jun/2026 10:29:06] "GET /records/feed-consumption/ HTTP/1.1" 200 3774
+[29/Jun/2026 10:29:19] "GET /records/feed-consumption/add/ HTTP/1.1" 200 4639
+[29/Jun/2026 10:30:19] "GET /records/egg-sales/ HTTP/1.1" 200 8565
+[29/Jun/2026 10:31:20] "GET /records/flocks/ HTTP/1.1" 200 5931
+[29/Jun/2026 10:31:31] "GET /records/houses/ HTTP/1.1" 200 3495
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 10:38:34] "GET /records/houses/ HTTP/1.1" 200 3495
+[29/Jun/2026 10:38:43] "GET /records/houses/add/ HTTP/1.1" 200 3853
+[29/Jun/2026 10:39:17] "GET / HTTP/1.1" 200 9375
+[29/Jun/2026 10:39:18] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[29/Jun/2026 10:39:18] "GET /favicon.ico HTTP/1.1" 404 5387
+[29/Jun/2026 10:39:27] "GET /dashboard/ HTTP/1.1" 200 4934
+[29/Jun/2026 10:39:30] "GET /records/houses/ HTTP/1.1" 200 3495
+[29/Jun/2026 10:39:34] "GET /records/houses/add/ HTTP/1.1" 200 3853
+[29/Jun/2026 10:40:39] "GET /records/houses/add/ HTTP/1.1" 200 3853
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 10:46:42] "GET /records/houses/add/ HTTP/1.1" 200 3858
+[29/Jun/2026 10:46:57] "GET /records/houses/1/edit/ HTTP/1.1" 200 3871
+[29/Jun/2026 10:47:05] "POST /records/houses/1/edit/ HTTP/1.1" 302 0
+[29/Jun/2026 10:47:05] "GET /records/houses/1/ HTTP/1.1" 200 2937
+[29/Jun/2026 10:47:11] "GET /records/houses/ HTTP/1.1" 200 3502
+[29/Jun/2026 10:47:20] "GET /records/flocks/ HTTP/1.1" 200 5931
+[29/Jun/2026 10:47:23] "GET /records/feed-mixes/ HTTP/1.1" 200 5716
+[29/Jun/2026 10:48:07] "GET /records/feed-mixes/4/edit/ HTTP/1.1" 200 28392
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 10:51:43] "GET /records/feed-mixes/4/edit/ HTTP/1.1" 200 21888
+[29/Jun/2026 10:51:52] "POST /records/feed-mixes/4/edit/ HTTP/1.1" 302 0
+[29/Jun/2026 10:51:52] "GET /records/feed-mixes/4/ HTTP/1.1" 200 3258
+[29/Jun/2026 10:51:56] "GET /records/feed-mixes/ HTTP/1.1" 200 5716
+[29/Jun/2026 10:51:58] "GET /records/feed-mixes/add/ HTTP/1.1" 200 18616
+[29/Jun/2026 10:55:06] "GET /records/feed-mixes/add/ HTTP/1.1" 200 18616
+[29/Jun/2026 10:57:13] "GET /records/feed-mixes/add/ HTTP/1.1" 200 18392
+[29/Jun/2026 10:58:22] "POST /records/feed-mixes/add/ HTTP/1.1" 302 0
+[29/Jun/2026 10:58:22] "GET /records/feed-mixes/5/ HTTP/1.1" 200 3250
+[29/Jun/2026 10:58:27] "GET /records/feed-mixes/ HTTP/1.1" 200 6632
+[29/Jun/2026 10:58:40] "GET /records/feed-mixes/3/delete/ HTTP/1.1" 200 2346
+[29/Jun/2026 10:58:42] "POST /records/feed-mixes/3/delete/ HTTP/1.1" 302 0
+[29/Jun/2026 10:58:42] "GET /records/feed-mixes/3/ HTTP/1.1" 200 3270
+[29/Jun/2026 10:58:44] "GET /records/feed-mixes/ HTTP/1.1" 200 6632
+[29/Jun/2026 10:58:52] "GET /records/feed-mixes/3/delete/ HTTP/1.1" 200 2346
+[29/Jun/2026 10:58:59] "GET /records/feed-mixes/3/ HTTP/1.1" 200 3098
+[29/Jun/2026 10:59:05] "GET /records/feed-mixes/ HTTP/1.1" 200 6632
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 11:07:02] "GET /records/feed-mixes/ HTTP/1.1" 200 6601
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 11:14:19] "GET /records/feed-mixes/ HTTP/1.1" 200 6346
+[29/Jun/2026 11:14:46] "GET /records/feed-mixes/3/edit/ HTTP/1.1" 200 18335
+[29/Jun/2026 11:15:12] "POST /records/feed-mixes/3/edit/ HTTP/1.1" 302 0
+[29/Jun/2026 11:15:12] "GET /records/feed-mixes/3/ HTTP/1.1" 200 3362
+[29/Jun/2026 11:15:15] "GET /records/feed-mixes/ HTTP/1.1" 200 6354
+[29/Jun/2026 11:15:56] "GET /records/feed-mixes/3/edit/ HTTP/1.1" 200 19854
+[29/Jun/2026 11:17:06] "POST /records/feed-mixes/3/edit/ HTTP/1.1" 302 0
+[29/Jun/2026 11:17:06] "GET /records/feed-mixes/3/ HTTP/1.1" 200 3367
+[29/Jun/2026 11:17:09] "GET /records/feed-mixes/ HTTP/1.1" 200 6358
+[29/Jun/2026 11:17:29] "GET /records/purchases/ HTTP/1.1" 200 6607
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 11:22:25] "GET /records/purchases/ HTTP/1.1" 200 6607
+[29/Jun/2026 11:22:32] "GET /records/feed-mixes/ HTTP/1.1" 200 6358
+[29/Jun/2026 11:22:45] "GET /dashboard/ HTTP/1.1" 200 4934
+[29/Jun/2026 11:23:45] "GET /records/feed-mix-details/ HTTP/1.1" 200 8691
+[29/Jun/2026 11:24:25] "GET /records/purchases/ HTTP/1.1" 200 6607
+[29/Jun/2026 11:24:47] "GET /records/purchases/ HTTP/1.1" 200 6607
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 11:36:19] "GET /records/purchases/ HTTP/1.1" 200 6991
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 11:38:47] "GET /records/purchases/ HTTP/1.1" 200 6991
+[29/Jun/2026 11:41:15] "GET /records/purchases/ HTTP/1.1" 200 6991
+[29/Jun/2026 11:41:25] "GET /records/purchases/ HTTP/1.1" 200 6991
+[29/Jun/2026 11:41:25] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 27812
+Not Found: /favicon.ico
+[29/Jun/2026 11:41:25] "GET /favicon.ico HTTP/1.1" 404 5387
+[29/Jun/2026 11:41:51] "GET / HTTP/1.1" 200 9375
+[29/Jun/2026 11:41:57] "GET /dashboard/ HTTP/1.1" 200 4934
+[29/Jun/2026 11:41:59] "GET /records/purchases/ HTTP/1.1" 200 6991
+[29/Jun/2026 11:42:15] "GET /dashboard/ HTTP/1.1" 200 4934
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 11:46:46] "GET /dashboard/ HTTP/1.1" 200 12941
+[29/Jun/2026 11:46:46] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 28937
+[29/Jun/2026 11:48:30] "GET /records/egg-prices/ HTTP/1.1" 200 4274
+[29/Jun/2026 11:48:30] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 11:48:38] "GET /records/egg-production/ HTTP/1.1" 200 3908
+[29/Jun/2026 11:48:46] "GET /dashboard/ HTTP/1.1" 200 12941
+[29/Jun/2026 11:48:49] "GET /records/houses/ HTTP/1.1" 200 3502
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 12:22:54] "GET / HTTP/1.1" 200 9375
+Not Found: /favicon.ico
+[29/Jun/2026 12:22:55] "GET /favicon.ico HTTP/1.1" 404 5387
+[29/Jun/2026 12:23:03] "GET /dashboard/ HTTP/1.1" 200 7885
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 12:40:56] "GET /records/egg-sales/ HTTP/1.1" 200 8366
+[29/Jun/2026 12:40:56] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 12:41:09] "GET /records/egg-sales/add/ HTTP/1.1" 200 18775
+[29/Jun/2026 12:41:28] "POST /records/egg-sales/add/ HTTP/1.1" 200 18955
+[29/Jun/2026 12:41:51] "GET /payments/mobile-money/providers/ HTTP/1.1" 200 384
+[29/Jun/2026 12:42:24] "POST /payments/mobile-money/request/ HTTP/1.1" 200 264
+[29/Jun/2026 12:42:24] "GET /payments/mobile-money/status/SIMULATOR-20260629094224-AB8A3F4E/ HTTP/1.1" 200 169
+[29/Jun/2026 12:43:21] "POST /records/egg-sales/add/ HTTP/1.1" 200 18955
+[29/Jun/2026 12:43:21] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 12:43:48] "POST /records/egg-sales/add/ HTTP/1.1" 200 18952
+[29/Jun/2026 12:43:56] "POST /records/egg-sales/add/ HTTP/1.1" 200 18952
+[29/Jun/2026 12:44:30] "POST /records/egg-sales/add/ HTTP/1.1" 200 18952
+[29/Jun/2026 12:44:34] "GET /records/egg-sales/ HTTP/1.1" 200 8366
+[29/Jun/2026 12:44:48] "GET /records/egg-production/ HTTP/1.1" 200 3908
+[29/Jun/2026 12:44:48] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 12:44:59] "GET /records/egg-sales/ HTTP/1.1" 200 8366
+[29/Jun/2026 12:45:03] "GET /records/egg-sales/add/ HTTP/1.1" 200 18775
+[29/Jun/2026 12:45:16] "POST /records/egg-sales/add/ HTTP/1.1" 200 18952
+[29/Jun/2026 12:46:49] "POST /records/egg-sales/add/ HTTP/1.1" 200 18952
+[29/Jun/2026 12:46:49] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 12:46:52] "POST /records/egg-sales/add/ HTTP/1.1" 200 18952
+[29/Jun/2026 12:46:54] "POST /records/egg-sales/add/ HTTP/1.1" 200 18952
+[29/Jun/2026 12:47:58] "GET /records/egg-production/ HTTP/1.1" 200 3908
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 12:52:38] "GET / HTTP/1.1" 200 9375
+[29/Jun/2026 12:52:39] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 12:52:45] "GET /dashboard/ HTTP/1.1" 200 12681
+[29/Jun/2026 12:55:20] "GET /records/egg-production/ HTTP/1.1" 200 4266
+[29/Jun/2026 12:55:20] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 12:55:30] "GET /records/egg-production/add/ HTTP/1.1" 200 4242
+[29/Jun/2026 12:55:56] "POST /records/egg-production/add/ HTTP/1.1" 302 0
+[29/Jun/2026 12:55:56] "GET /records/egg-production/2/ HTTP/1.1" 200 3821
+[29/Jun/2026 12:55:59] "GET /records/egg-production/ HTTP/1.1" 200 5323
+[29/Jun/2026 13:21:44] "GET /records/egg-prices/ HTTP/1.1" 200 4274
+[29/Jun/2026 13:21:45] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 13:21:48] "GET /records/feed-mixes/ HTTP/1.1" 200 6357
+[29/Jun/2026 13:22:07] "GET /records/feed-mix-details/ HTTP/1.1" 200 8691
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PMS\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader

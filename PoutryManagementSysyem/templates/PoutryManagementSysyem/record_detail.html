@@ -1,0 +1,25 @@
+{% extends 'PoutryManagementSysyem/base_app.html' %}
+
+{% block title %}{{ config.singular }}{% endblock %}
+{% block eyebrow %}Record details{% endblock %}
+{% block page_title %}{{ object }}{% endblock %}
+{% block page_actions %}
+    <a href="{% url 'poultry:record_list' model_slug %}">Back to {{ config.title }}</a>
+    {% if can_change %}
+        <a href="{% url 'poultry:record_update' model_slug object.pk %}">Edit</a>
+    {% endif %}
+    {% if can_delete %}
+        <a href="{% url 'poultry:record_delete' model_slug object.pk %}">Delete</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <section class="detail-panel detail-panel-{{ model_slug }}">
+        {% for row in rows %}
+            <article>
+                <span>{{ row.label }}</span>
+                <strong>{{ row.value|default:"-" }}</strong>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

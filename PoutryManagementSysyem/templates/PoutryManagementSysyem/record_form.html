@@ -1,0 +1,668 @@
+{% extends 'PoutryManagementSysyem/base_app.html' %}
+
+{% block title %}{{ action }} {{ config.singular }}{% endblock %}
+{% block eyebrow %}{{ action }} record{% endblock %}
+{% block page_title %}{{ action }} {{ config.singular }}{% endblock %}
+{% block page_actions %}
+    <a href="{% url 'poultry:record_list' model_slug %}">Back to {{ config.title }}</a>
+{% endblock %}
+
+{% block content %}
+    <section class="form-panel">
+        <form method="post" class="record-form record-form-{{ model_slug }}" {% if model_slug == 'egg-sales' %}data-mobile-money-form="true"{% endif %} novalidate>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-grid">
+                {% for field in form %}
+                    <label>
+                        <span>{{ field.label }}</span>
+                        {{ field }}
+                        {% if field.help_text %}
+                            <small>{{ field.help_text }}</small>
+                        {% endif %}
+                        {{ field.errors }}
+                    </label>
+                {% endfor %}
+            </div>
+            {% if model_slug == 'feed-mixes' and feed_mix_ingredient_formset %}
+                <section class="feed-mix-builder">
+                    <div class="section-heading">
+                        <div>
+                            <div class="eyebrow">Ingredients</div>
+                            <h2>Foods in this mixture</h2>
+                        </div>
+                        <button type="button" data-add-feed-ingredient>Add food</button>
+                    </div>
+                    {{ feed_mix_ingredient_formset.management_form }}
+                    {{ feed_mix_ingredient_formset.non_form_errors }}
+                    <div class="feed-mix-ingredient-table">
+                        <div class="feed-mix-ingredient-head">
+                            <span>Food</span>
+                            <span>Quantity</span>
+                            <span>Unit price</span>
+                            <span>Amount</span>
+                            <span>Stock</span>
+                            <span></span>
+                        </div>
+                        <div data-feed-ingredient-rows>
+                            {% for ingredient_form in feed_mix_ingredient_formset %}
+                                <div class="feed-mix-ingredient-row" data-feed-ingredient-row>
+                                    {{ ingredient_form.DELETE }}
+                                    <label>
+                                        {{ ingredient_form.purchase }}
+                                        {{ ingredient_form.purchase.errors }}
+                                    </label>
+                                    <label>
+                                        {{ ingredient_form.quantity }}
+                                        {{ ingredient_form.quantity.errors }}
+                                    </label>
+                                    <div class="feed-mix-row-value" data-row-unit-price>UGX 0</div>
+                                    <div class="feed-mix-row-value" data-row-amount>UGX 0</div>
+                                    <div class="feed-mix-row-value" data-row-stock>-</div>
+                                    <button type="button" class="plain-button" data-remove-feed-ingredient>Remove</button>
+                                    {{ ingredient_form.non_field_errors }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="calculation-panel feed-mix-live-totals" aria-live="polite">
+                        <article>
+                            <span>Total quantity</span>
+                            <strong data-total-quantity>0kg</strong>
+                        </article>
+                        <article>
+                            <span>Total unit price</span>
+                            <strong data-total-unit-price>UGX 0</strong>
+                        </article>
+                        <article>
+                            <span>Total amount</span>
+                            <strong data-total-amount>UGX 0</strong>
+                        </article>
+                        <article>
+                            <span>Stock</span>
+                            <strong data-mixed-stock>0kg</strong>
+                        </article>
+                    </div>
+                    <template data-feed-ingredient-empty-form>
+                        <div class="feed-mix-ingredient-row" data-feed-ingredient-row>
+                            {{ feed_mix_ingredient_formset.empty_form.DELETE }}
+                            <label>
+                                {{ feed_mix_ingredient_formset.empty_form.purchase }}
+                            </label>
+                            <label>
+                                {{ feed_mix_ingredient_formset.empty_form.quantity }}
+                            </label>
+                            <div class="feed-mix-row-value" data-row-unit-price>UGX 0</div>
+                            <div class="feed-mix-row-value" data-row-amount>UGX 0</div>
+                            <div class="feed-mix-row-value" data-row-stock>-</div>
+                            <button type="button" class="plain-button" data-remove-feed-ingredient>Remove</button>
+                        </div>
+                    </template>
+                </section>
+            {% endif %}
+            {% if model_slug == 'egg-sales' %}
+                <div class="payment-preview" aria-live="polite">
+                    <span>Amount to pay</span>
+                    <strong data-payment-amount>0.00</strong>
+                </div>
+                <input type="hidden" name="mobile_money_number" data-mobile-money-number>
+                <input type="hidden" name="mobile_money_request_id" data-mobile-money-request-id>
+                <input type="hidden" name="mobile_money_confirmed" value="0" data-mobile-money-confirmed>
+            {% endif %}
+            {% if model_slug == 'feed-mix-details' %}
+                <div class="feed-item-preview" data-feed-item-preview hidden>
+                    <span>Purchased stock</span>
+                    <strong data-feed-item-stock></strong>
+                </div>
+            {% endif %}
+            <div class="form-actions">
+                <button type="submit">Save {{ config.singular }}</button>
+                <a href="{% url 'poultry:record_list' model_slug %}">Cancel</a>
+            </div>
+        </form>
+    </section>
+
+    {% if model_slug == 'feed-mix-details' %}
+        {{ feed_item_prices|json_script:"feed-item-prices" }}
+        {{ feed_mix_purchase_options|json_script:"feed-mix-purchase-options" }}
+        <script>
+            (function () {
+                var form = document.querySelector('.record-form-feed-mix-details');
+                if (!form) {
+                    return;
+                }
+
+                var feedMixInput = form.querySelector('[name="feed_mix"]');
+                var itemInput = form.querySelector('[name="purchase"]');
+                var priceInput = form.querySelector('[name="unit_price"]');
+                var preview = form.querySelector('[data-feed-item-preview]');
+                var stockText = form.querySelector('[data-feed-item-stock]');
+                var itemPrices = JSON.parse(document.getElementById('feed-item-prices').textContent || '{}');
+                var feedMixPurchases = JSON.parse(document.getElementById('feed-mix-purchase-options').textContent || '{}');
+                var originalOptions = itemInput ? Array.prototype.map.call(itemInput.options, function (option) {
+                    return option.cloneNode(true);
+                }) : [];
+
+                function filterPurchasedItems() {
+                    if (!feedMixInput || !itemInput) {
+                        return;
+                    }
+                    var allowed = feedMixPurchases[feedMixInput.value] || [];
+                    var previousValue = itemInput.value;
+                    itemInput.innerHTML = '';
+                    originalOptions.forEach(function (option) {
+                        if (!option.value || allowed.indexOf(parseInt(option.value, 10)) !== -1) {
+                            itemInput.appendChild(option.cloneNode(true));
+                        }
+                    });
+                    if (allowed.indexOf(parseInt(previousValue, 10)) !== -1) {
+                        itemInput.value = previousValue;
+                    }
+                    syncPurchasedItem();
+                }
+
+                function syncPurchasedItem() {
+                    if (!itemInput) {
+                        return;
+                    }
+                    var item = itemPrices[itemInput.value];
+                    if (!item) {
+                        if (preview) {
+                            preview.hidden = true;
+                        }
+                        return;
+                    }
+                    if (priceInput) {
+                        priceInput.value = item.unit_price;
+                    }
+                    if (stockText) {
+                        stockText.textContent = item.item_name + ' - ' + item.stock;
+                    }
+                    if (preview) {
+                        preview.hidden = false;
+                    }
+                }
+
+                if (itemInput) {
+                    itemInput.addEventListener('change', syncPurchasedItem);
+                }
+                if (feedMixInput) {
+                    feedMixInput.addEventListener('change', filterPurchasedItems);
+                }
+                filterPurchasedItems();
+            }());
+        </script>
+    {% endif %}
+
+    {% if model_slug == 'feed-mixes' %}
+        {{ feed_mix_purchase_prices|json_script:"feed-mix-purchase-prices" }}
+        {{ feed_mix_recipe_purchase_options|json_script:"feed-mix-recipe-purchase-options" }}
+        <script>
+            (function () {
+                var form = document.querySelector('.record-form-feed-mixes');
+                if (!form) {
+                    return;
+                }
+
+                var mixInput = form.querySelector('[name="mix_name"]');
+                var rowContainer = form.querySelector('[data-feed-ingredient-rows]');
+                var addButton = form.querySelector('[data-add-feed-ingredient]');
+                var emptyTemplate = form.querySelector('[data-feed-ingredient-empty-form]');
+                var totalForms = form.querySelector('[name="ingredients-TOTAL_FORMS"]');
+                var purchasePrices = JSON.parse(document.getElementById('feed-mix-purchase-prices').textContent || '{}');
+                var recipePurchases = JSON.parse(document.getElementById('feed-mix-recipe-purchase-options').textContent || '{}');
+                var originalOptions = [];
+                var firstPurchaseInput = form.querySelector('[name$="-purchase"]');
+                if (firstPurchaseInput) {
+                    originalOptions = Array.prototype.map.call(firstPurchaseInput.options, function (option) {
+                        return option.cloneNode(true);
+                    });
+                }
+
+                function formatCurrency(value) {
+                    var amount = parseFloat(value || '0');
+                    return 'UGX ' + amount.toLocaleString(undefined, {
+                        maximumFractionDigits: 0
+                    });
+                }
+
+                function parseNumber(value) {
+                    return parseFloat(value || '0') || 0;
+                }
+
+                function formatQuantity(value) {
+                    return value.toLocaleString(undefined, {
+                        maximumFractionDigits: 2
+                    }) + 'kg';
+                }
+
+                function selectedAllowedPurchases() {
+                    return (recipePurchases[mixInput.value] || []).map(function (value) {
+                        return String(value);
+                    });
+                }
+
+                function filterPurchaseInput(purchaseInput) {
+                    if (!purchaseInput) {
+                        return;
+                    }
+                    var allowed = selectedAllowedPurchases();
+                    var previousValue = purchaseInput.value;
+                    purchaseInput.innerHTML = '';
+                    originalOptions.forEach(function (option) {
+                        if (!option.value || allowed.indexOf(option.value) !== -1) {
+                            purchaseInput.appendChild(option.cloneNode(true));
+                        }
+                    });
+                    if (allowed.indexOf(previousValue) !== -1) {
+                        purchaseInput.value = previousValue;
+                    } else {
+                        purchaseInput.value = '';
+                    }
+                }
+
+                function visibleRows() {
+                    return Array.prototype.filter.call(form.querySelectorAll('[data-feed-ingredient-row]'), function (row) {
+                        var deleteInput = row.querySelector('[name$="-DELETE"]');
+                        return !deleteInput || !deleteInput.checked;
+                    });
+                }
+
+                function syncRow(row) {
+                    var purchaseInput = row.querySelector('[name$="-purchase"]');
+                    var quantityInput = row.querySelector('[name$="-quantity"]');
+                    var unitPriceText = row.querySelector('[data-row-unit-price]');
+                    var amountText = row.querySelector('[data-row-amount]');
+                    var stockText = row.querySelector('[data-row-stock]');
+                    var purchase = purchaseInput ? purchasePrices[purchaseInput.value] : null;
+                    var unitPrice = purchase ? parseNumber(purchase.unit_price) : 0;
+                    var quantity = quantityInput ? parseNumber(quantityInput.value) : 0;
+                    if (unitPriceText) {
+                        unitPriceText.textContent = formatCurrency(unitPrice);
+                    }
+                    if (amountText) {
+                        amountText.textContent = formatCurrency(unitPrice * quantity);
+                    }
+                    if (stockText) {
+                        stockText.textContent = purchase ? purchase.stock : '-';
+                    }
+                }
+
+                function syncTotals() {
+                    var totalQuantity = 0;
+                    var totalUnitPrice = 0;
+                    var totalAmount = 0;
+                    visibleRows().forEach(function (row) {
+                        var purchaseInput = row.querySelector('[name$="-purchase"]');
+                        var quantityInput = row.querySelector('[name$="-quantity"]');
+                        var purchase = purchaseInput ? purchasePrices[purchaseInput.value] : null;
+                        var unitPrice = purchase ? parseNumber(purchase.unit_price) : 0;
+                        var quantity = quantityInput ? parseNumber(quantityInput.value) : 0;
+                        syncRow(row);
+                        if (purchase && quantity) {
+                            totalQuantity += quantity;
+                            totalUnitPrice += unitPrice;
+                            totalAmount += unitPrice * quantity;
+                        }
+                    });
+                    form.querySelector('[data-total-quantity]').textContent = formatQuantity(totalQuantity);
+                    form.querySelector('[data-total-unit-price]').textContent = formatCurrency(totalUnitPrice);
+                    form.querySelector('[data-total-amount]').textContent = formatCurrency(totalAmount);
+                    form.querySelector('[data-mixed-stock]').textContent = formatQuantity(totalQuantity);
+                }
+
+                function filterRows() {
+                    Array.prototype.forEach.call(form.querySelectorAll('[name$="-purchase"]'), filterPurchaseInput);
+                    syncTotals();
+                }
+
+                function addRow() {
+                    if (!emptyTemplate || !rowContainer || !totalForms) {
+                        return;
+                    }
+                    var index = parseInt(totalForms.value, 10);
+                    var html = emptyTemplate.innerHTML.replace(/__prefix__/g, index);
+                    var wrapper = document.createElement('div');
+                    wrapper.innerHTML = html.trim();
+                    rowContainer.appendChild(wrapper.firstElementChild);
+                    totalForms.value = index + 1;
+                    filterRows();
+                }
+
+                form.addEventListener('input', function (event) {
+                    if (event.target.matches('[name$="-quantity"]')) {
+                        syncTotals();
+                    }
+                });
+                form.addEventListener('change', function (event) {
+                    if (event.target === mixInput) {
+                        filterRows();
+                    }
+                    if (event.target.matches('[name$="-purchase"]')) {
+                        syncTotals();
+                    }
+                });
+                form.addEventListener('click', function (event) {
+                    if (event.target.matches('[data-add-feed-ingredient]')) {
+                        addRow();
+                    }
+                    if (event.target.matches('[data-remove-feed-ingredient]')) {
+                        var row = event.target.closest('[data-feed-ingredient-row]');
+                        var deleteInput = row ? row.querySelector('[name$="-DELETE"]') : null;
+                        if (deleteInput) {
+                            deleteInput.checked = true;
+                            row.hidden = true;
+                        } else if (row) {
+                            row.remove();
+                        }
+                        syncTotals();
+                    }
+                });
+                filterRows();
+            }());
+        </script>
+    {% endif %}
+
+    {% if model_slug == 'purchases' %}
+        {{ purchase_item_categories|json_script:"purchase-item-categories" }}
+        <script>
+            (function () {
+                var form = document.querySelector('.record-form-purchases');
+                if (!form) {
+                    return;
+                }
+
+                var itemInput = form.querySelector('[name="item_name"]');
+                var categoryInput = form.querySelector('[name="category"]');
+                var categories = JSON.parse(document.getElementById('purchase-item-categories').textContent || '{}');
+
+                function syncCategory() {
+                    if (!itemInput || !categoryInput) {
+                        return;
+                    }
+                    var category = categories[itemInput.value];
+                    if (category) {
+                        categoryInput.value = category;
+                    }
+                }
+
+                if (itemInput) {
+                    itemInput.addEventListener('change', syncCategory);
+                }
+                syncCategory();
+            }());
+        </script>
+    {% endif %}
+
+    {% if model_slug == 'egg-sales' %}
+        {{ egg_price_rates|json_script:"egg-price-rates" }}
+        <div class="payment-modal" data-payment-modal hidden>
+            <div class="payment-dialog" role="dialog" aria-modal="true" aria-labelledby="payment-title">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">Mobile Money</div>
+                        <h2 id="payment-title">Confirm payment</h2>
+                    </div>
+                    <button type="button" class="plain-button" data-payment-close>Close</button>
+                </div>
+                <div class="payment-amount">
+                    <span>Amount</span>
+                    <strong data-modal-payment-amount>0.00</strong>
+                </div>
+                <label>
+                    <span>Mobile number</span>
+                    <input type="tel" data-mobile-money-input placeholder="07XXXXXXXX" autocomplete="tel">
+                </label>
+                <label>
+                    <span>Provider</span>
+                    <select data-mobile-money-provider></select>
+                </label>
+                <p class="payment-help" data-payment-help>A payment approval request will be sent to this number.</p>
+                <p class="payment-status" data-payment-status></p>
+                <div class="form-actions">
+                    <button type="button" data-payment-confirm>Pay now</button>
+                    <button type="button" class="plain-button" data-payment-cancel>Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            (function () {
+                var form = document.querySelector('[data-mobile-money-form]');
+                var modal = document.querySelector('[data-payment-modal]');
+                if (!form || !modal) {
+                    return;
+                }
+
+                var quantity = form.querySelector('[name="quantity"]');
+                var rate = form.querySelector('[name="rate"]');
+                var eggPrice = form.querySelector('[name="egg_price"]');
+                var saleType = form.querySelector('[name="sale_type"]');
+                var paymentMethod = form.querySelector('[name="payment_method"]');
+                var amountPreview = form.querySelector('[data-payment-amount]');
+                var modalAmount = modal.querySelector('[data-modal-payment-amount]');
+                var numberInput = modal.querySelector('[data-mobile-money-input]');
+                var providerInput = modal.querySelector('[data-mobile-money-provider]');
+                var savedNumber = form.querySelector('[data-mobile-money-number]');
+                var requestId = form.querySelector('[data-mobile-money-request-id]');
+                var confirmed = form.querySelector('[data-mobile-money-confirmed]');
+                var help = modal.querySelector('[data-payment-help]');
+                var status = modal.querySelector('[data-payment-status]');
+                var closeButtons = modal.querySelectorAll('[data-payment-close], [data-payment-cancel]');
+                var confirmButton = modal.querySelector('[data-payment-confirm]');
+                var priceRates = JSON.parse(document.getElementById('egg-price-rates').textContent || '{}');
+                var providersLoaded = false;
+
+                function syncRateFromPrice() {
+                    if (!eggPrice || !rate) {
+                        return;
+                    }
+                    var selectedPrice = priceRates[eggPrice.value];
+                    if (selectedPrice !== undefined) {
+                        rate.value = selectedPrice.rate;
+                        rate.readOnly = true;
+                        if (saleType && selectedPrice.sale_type) {
+                            saleType.value = selectedPrice.sale_type;
+                        }
+                    } else {
+                        rate.readOnly = false;
+                    }
+                    updateAmount();
+                }
+
+                function moneyValue() {
+                    var qty = parseFloat(quantity && quantity.value ? quantity.value : '0');
+                    var price = parseFloat(rate && rate.value ? rate.value : '0');
+                    var amount = qty * price;
+                    return Number.isFinite(amount) ? amount : 0;
+                }
+
+                function formatMoney(value) {
+                    return value.toLocaleString(undefined, {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    });
+                }
+
+                function updateAmount() {
+                    var amount = formatMoney(moneyValue());
+                    amountPreview.textContent = amount;
+                    modalAmount.textContent = amount;
+                    confirmed.value = '0';
+                }
+
+                function isMobileMoney() {
+                    return paymentMethod && paymentMethod.value.toLowerCase() === 'mobile money';
+                }
+
+                function openModal() {
+                    status.textContent = '';
+                    modal.hidden = false;
+                    loadProviders();
+                    numberInput.focus();
+                }
+
+                function closeModal() {
+                    modal.hidden = true;
+                }
+
+                function csrfToken() {
+                    var csrfInput = form.querySelector('[name="csrfmiddlewaretoken"]');
+                    return csrfInput ? csrfInput.value : '';
+                }
+
+                function loadProviders() {
+                    if (providersLoaded || !providerInput) {
+                        return;
+                    }
+                    status.textContent = 'Loading mobile money providers...';
+                    fetch('{% url "poultry:mobile_money_providers" %}')
+                        .then(function (response) {
+                            return response.json();
+                        })
+                        .then(function (data) {
+                            if (!data.ok) {
+                                throw new Error('Could not load mobile money providers.');
+                            }
+                            providerInput.innerHTML = '';
+                            data.providers.forEach(function (provider) {
+                                var option = document.createElement('option');
+                                option.value = provider.code;
+                                option.textContent = provider.active ? provider.name : provider.name + ' (configure credentials)';
+                                option.disabled = !provider.active;
+                                option.dataset.phoneHint = provider.phone_hint;
+                                option.dataset.simulated = provider.simulated ? '1' : '0';
+                                providerInput.appendChild(option);
+                            });
+                            providersLoaded = true;
+                            updateProviderHint();
+                            status.textContent = '';
+                        })
+                        .catch(function (error) {
+                            status.textContent = error.message;
+                        });
+                }
+
+                function updateProviderHint() {
+                    if (!providerInput || !numberInput) {
+                        return;
+                    }
+                    var option = providerInput.options[providerInput.selectedIndex];
+                    if (option && option.dataset.phoneHint) {
+                        numberInput.placeholder = option.dataset.phoneHint;
+                    }
+                    if (help && option) {
+                        help.textContent = option.dataset.simulated === '1'
+                            ? 'Demo mode approves locally only. No PIN prompt will be sent to the phone.'
+                            : 'A real provider request will prompt the customer for a PIN on their phone.';
+                    }
+                }
+
+                if (quantity) {
+                    quantity.addEventListener('input', updateAmount);
+                }
+                if (eggPrice) {
+                    eggPrice.addEventListener('change', syncRateFromPrice);
+                }
+                if (rate) {
+                    rate.addEventListener('input', updateAmount);
+                }
+                if (paymentMethod) {
+                    paymentMethod.addEventListener('change', function () {
+                        confirmed.value = isMobileMoney() ? '0' : '1';
+                        if (isMobileMoney()) {
+                            loadProviders();
+                        }
+                    });
+                }
+                if (providerInput) {
+                    providerInput.addEventListener('change', updateProviderHint);
+                }
+
+                closeButtons.forEach(function (button) {
+                    button.addEventListener('click', closeModal);
+                });
+
+                confirmButton.addEventListener('click', function () {
+                    if (!numberInput.value.trim()) {
+                        status.textContent = 'Enter the mobile money number.';
+                        numberInput.focus();
+                        return;
+                    }
+                    if (moneyValue() <= 0) {
+                        status.textContent = 'Enter quantity and rate before requesting payment.';
+                        return;
+                    }
+
+                    confirmButton.disabled = true;
+                    status.textContent = 'Sending payment request...';
+
+                    var body = new URLSearchParams();
+                    body.append('provider', providerInput && providerInput.value ? providerInput.value : 'simulator');
+                    body.append('mobile_number', numberInput.value.trim());
+                    body.append('amount', moneyValue().toFixed(2));
+
+                    fetch('{% url "poultry:request_mobile_money_payment" %}', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                            'X-CSRFToken': csrfToken()
+                        },
+                        body: body.toString()
+                    })
+                        .then(function (response) {
+                            return response.json().then(function (data) {
+                                if (!response.ok || !data.ok) {
+                                    throw new Error(data.message || 'Payment request failed.');
+                                }
+                                return data;
+                            });
+                        })
+                        .then(function (data) {
+                            savedNumber.value = numberInput.value.trim();
+                            requestId.value = data.transaction_id;
+                            status.textContent = data.simulated
+                                ? data.message + ' Saving sale...'
+                                : data.message + ' Checking approval...';
+                            return fetch('/payments/mobile-money/status/' + encodeURIComponent(data.transaction_id) + '/');
+                        })
+                        .then(function (response) {
+                            return response.json().then(function (data) {
+                                if (!response.ok || !data.ok) {
+                                    throw new Error(data.message || 'Could not verify payment status.');
+                                }
+                                return data;
+                            });
+                        })
+                        .then(function (data) {
+                            var approvedStatuses = ['approved', 'successful', 'success', 'completed'];
+                            if (approvedStatuses.indexOf(String(data.status).toLowerCase()) === -1) {
+                                throw new Error('Payment is not approved yet.');
+                            }
+                            confirmed.value = '1';
+                            status.textContent = 'Payment approved. Saving sale...';
+                            closeModal();
+                            form.requestSubmit();
+                        })
+                        .catch(function (error) {
+                            status.textContent = error.message;
+                        })
+                        .finally(function () {
+                            confirmButton.disabled = false;
+                        });
+                });
+
+                form.addEventListener('submit', function (event) {
+                    updateAmount();
+                    if (isMobileMoney() && confirmed.value !== '1') {
+                        event.preventDefault();
+                        openModal();
+                    }
+                });
+
+                syncRateFromPrice();
+                updateAmount();
+            }());
+        </script>
+    {% endif %}
+{% endblock %}
