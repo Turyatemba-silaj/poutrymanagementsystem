@@ -26,20 +26,46 @@
             <span class="nav-section">General</span>
             <a href="/">Home</a>
             <a href="{% url 'poultry:dashboard' %}">Dashboard</a>
-            <a href="{% url 'poultry:user_list' %}">Users</a>
-            <a href="{% url 'poultry:role_list' %}">Roles</a>
+            {% if perms.auth.view_user or perms.auth.view_group %}
+                <a href="{% url 'poultry:user_list' %}">Users & Roles</a>
+            {% endif %}
             <span class="nav-section">Operations</span>
-            <a href="{% url 'poultry:record_list' 'houses' %}">Poultry Houses</a>
-            <a href="{% url 'poultry:record_list' 'flocks' %}">Flocks</a>
-            <a href="{% url 'poultry:record_list' 'purchases' %}">Purchases</a>
-            <a href="{% url 'poultry:record_list' 'feed-mixes' %}">Feed Mixes</a>
-            <a href="{% url 'poultry:record_list' 'feed-mix-details' %}">Feed Mixing Details</a>
-            <a href="{% url 'poultry:record_list' 'feed-consumption' %}">Feed Consumption</a>
-            <a href="{% url 'poultry:record_list' 'egg-production' %}">Egg Production</a>
-            <a href="{% url 'poultry:record_list' 'egg-prices' %}">Egg Prices</a>
-            <a href="{% url 'poultry:record_list' 'egg-sales' %}">Egg Sales</a>
-            <a href="{% url 'poultry:record_list' 'expenses' %}">Expenses</a>
-            <a href="{% url 'poultry:record_list' 'audit-logs' %}">Audit Logs</a>
+            {% if perms.PoutryManagementSysyem.view_poultryhouse %}
+                <a href="{% url 'poultry:record_list' 'houses' %}">Poultry Houses</a>
+            {% endif %}
+            {% if perms.PoutryManagementSysyem.view_flock %}
+                <a href="{% url 'poultry:record_list' 'flocks' %}">Flocks</a>
+            {% endif %}
+            {% if perms.PoutryManagementSysyem.view_purchase %}
+                <a href="{% url 'poultry:record_list' 'purchases' %}">Purchases</a>
+            {% endif %}
+            {% if perms.PoutryManagementSysyem.view_feedmix %}
+                <a href="{% url 'poultry:record_list' 'feed-mixes' %}">Feed Mixes</a>
+            {% endif %}
+            {% if perms.PoutryManagementSysyem.view_feedmixdetail %}
+                <a href="{% url 'poultry:record_list' 'feed-mix-details' %}">Feed Mixing Details</a>
+            {% endif %}
+            {% if perms.PoutryManagementSysyem.view_feedconsumption %}
+                <a href="{% url 'poultry:record_list' 'feed-consumption' %}">Feed Consumption</a>
+            {% endif %}
+            {% if perms.PoutryManagementSysyem.view_eggproduction %}
+                <a href="{% url 'poultry:record_list' 'egg-production' %}">Egg Production</a>
+            {% endif %}
+            {% if perms.PoutryManagementSysyem.view_eggprice %}
+                <a href="{% url 'poultry:record_list' 'egg-prices' %}">Egg Prices</a>
+            {% endif %}
+            {% if perms.PoutryManagementSysyem.view_eggsale %}
+                <a href="{% url 'poultry:record_list' 'egg-sales' %}">Egg Sales</a>
+            {% endif %}
+            {% if perms.PoutryManagementSysyem.view_expense %}
+                <a href="{% url 'poultry:record_list' 'expenses' %}">Expenses</a>
+            {% endif %}
+            {% if perms.PoutryManagementSysyem.view_income %}
+                <a href="{% url 'poultry:record_list' 'income' %}">Income</a>
+            {% endif %}
+            {% if perms.PoutryManagementSysyem.view_auditlog %}
+                <a href="{% url 'poultry:record_list' 'audit-logs' %}">Audit Logs</a>
+            {% endif %}
         </nav>
     </aside>
 

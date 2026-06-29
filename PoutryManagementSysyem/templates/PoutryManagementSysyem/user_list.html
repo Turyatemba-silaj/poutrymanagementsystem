@@ -1,19 +1,25 @@
 {% extends 'PoutryManagementSysyem/base_app.html' %}
 
-{% block title %}Users{% endblock %}
-{% block eyebrow %}Authentication{% endblock %}
-{% block page_title %}Users{% endblock %}
+{% block title %}Users & Roles{% endblock %}
+{% block eyebrow %}Authentication and authorization{% endblock %}
+{% block page_title %}Users & Roles{% endblock %}
 {% block page_actions %}
     {% if can_add_user %}
         <a href="{% url 'poultry:user_create' %}">Add User</a>
     {% endif %}
-    {% if can_view_roles %}
-        <a href="{% url 'poultry:role_list' %}">Roles</a>
+    {% if can_add_role %}
+        <a href="{% url 'poultry:role_create' %}">Add Role</a>
     {% endif %}
 {% endblock %}
 
 {% block content %}
     <section class="table-panel">
+        <div class="section-heading">
+            <div>
+                <div class="eyebrow">Users</div>
+                <h2>User Accounts</h2>
+            </div>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -53,4 +59,41 @@
             </tbody>
         </table>
     </section>
+
+    {% if can_view_roles %}
+        <section class="table-panel security-table-panel">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">Roles</div>
+                    <h2>Role Permissions</h2>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Permissions</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for role in roles %}
+                        <tr>
+                            <td>{{ role.name }}</td>
+                            <td>{{ role.permissions.count }}</td>
+                            <td class="table-actions">
+                                {% if can_change_role %}
+                                    <a href="{% url 'poultry:role_update' role.pk %}">Edit</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="3">No roles found.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    {% endif %}
 {% endblock %}

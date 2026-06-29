@@ -11,7 +11,7 @@ from django.core.exceptions import PermissionDenied
 from django.http import JsonResponse
 from django.forms import BaseFormSet, formset_factory, modelform_factory
 from django.db import transaction
-from django.db.models import Sum
+from django.db.models import Q, Sum
 from django.db.models.deletion import ProtectedError
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
@@ -147,6 +147,11 @@ def write_audit_log(request, action, obj, object_repr=None):
     )
 
 
+def set_feed_consumption_issuer(request, obj):
+    if isinstance(obj, FeedConsumption):
+        obj.issued_by = request.user.get_full_name() or request.user.get_username()
+
+
 MIN_TRAY_BALANCE = Decimal('5')
 MIN_LOOSE_EGG_BALANCE = Decimal('20')
 
@@ -257,6 +262,8 @@ def editable_field_names(model):
         excluded_fields.add('inventory_item')
         excluded_fields.add('unit')
         excluded_fields.add('unit_price')
+    if model is FeedConsumption:
+        excluded_fields.add('issued_by')
     return [
         field.name
         for field in model._meta.fields
@@ -286,6 +293,15 @@ def build_form_class(model):
                     '-purchase_date',
                     '-created_at',
                 )
+            if model is FeedConsumption and 'feed_mix' in self.fields:
+                self.fields['feed_mix'].queryset = FeedMix.objects.filter(stock__gt=0).order_by('mix_name', '-mixing_date')
+                if self.instance and self.instance.pk and self.instance.feed_mix_id:
+                    self.fields['feed_mix'].queryset = FeedMix.objects.filter(
+                        Q(stock__gt=0) | Q(pk=self.instance.feed_mix_id)
+                    ).order_by('mix_name', '-mixing_date')
+                self.fields['feed_mix'].label = 'Feed mix in stock'
+            if model is FeedConsumption and 'quantity' in self.fields:
+                self.fields['quantity'].label = 'Quantity from stock'
             for field_name, field in self.fields.items():
                 widget = field.widget
                 widget.attrs.setdefault('class', 'form-control')
@@ -588,6 +604,16 @@ def feed_mix_purchase_options():
     return options
 
 
+def feed_consumption_stock_options():
+    return {
+        str(feed_mix.pk): {
+            'stock': str(feed_mix.stock),
+            'stock_display': format_quantity_with_unit(feed_mix.stock, 'kg'),
+        }
+        for feed_mix in FeedMix.objects.order_by('mix_name', '-mixing_date')
+    }
+
+
 def feed_mix_recipe_purchase_options():
     purchase_ids = list(
         Purchase.objects.order_by('item_name', '-purchase_date', '-created_at').values_list('pk', flat=True)
@@ -826,6 +852,8 @@ def record_form_context(config, model_slug, form, action, obj=None):
     if model_slug == 'feed-mix-details':
         context['feed_item_prices'] = feed_item_price_options(model_slug)
         context['feed_mix_purchase_options'] = feed_mix_purchase_options()
+    if model_slug == 'feed-consumption':
+        context['feed_consumption_stock_options'] = feed_consumption_stock_options()
     if model_slug == 'feed-mixes':
         context['feed_mix_item_options'] = feed_mix_available_item_options()
         context['feed_mix_item_prices'] = feed_mix_item_prices()
@@ -964,11 +992,15 @@ def crud_index(request):
 def user_list(request):
     require_model_permission(request, User, 'view')
     users = User.objects.prefetch_related('groups').order_by('username')
+    roles = Group.objects.prefetch_related('permissions').order_by('name')
     return render(request, 'PoutryManagementSysyem/user_list.html', {
         'users': users,
+        'roles': roles,
         'can_add_user': has_model_permission(request.user, User, 'add'),
         'can_change_user': has_model_permission(request.user, User, 'change'),
         'can_view_roles': has_model_permission(request.user, Group, 'view'),
+        'can_add_role': has_model_permission(request.user, Group, 'add'),
+        'can_change_role': has_model_permission(request.user, Group, 'change'),
     })
 
 
@@ -1011,13 +1043,7 @@ def user_assign_roles(request, pk):
 
 @login_required
 def role_list(request):
-    require_model_permission(request, Group, 'view')
-    roles = Group.objects.prefetch_related('permissions').order_by('name')
-    return render(request, 'PoutryManagementSysyem/role_list.html', {
-        'roles': roles,
-        'can_add_role': has_model_permission(request.user, Group, 'add'),
-        'can_change_role': has_model_permission(request.user, Group, 'change'),
-    })
+    return redirect('poultry:user_list')
 
 
 @login_required
@@ -1028,12 +1054,12 @@ def role_create(request):
         role = form.save()
         write_audit_log(request, AuditLog.CREATE, role)
         messages.success(request, 'Role created successfully.')
-        return redirect('poultry:role_list')
+        return redirect('poultry:user_list')
     return render(request, 'PoutryManagementSysyem/security_form.html', {
         'title': 'Add Role',
         'eyebrow': 'Authorization',
         'form': form,
-        'back_url': reverse('poultry:role_list'),
+        'back_url': reverse('poultry:user_list'),
         'button_label': 'Save Role',
     })
 
@@ -1047,12 +1073,12 @@ def role_update(request, pk):
         role = form.save()
         write_audit_log(request, AuditLog.UPDATE, role)
         messages.success(request, 'Role updated successfully.')
-        return redirect('poultry:role_list')
+        return redirect('poultry:user_list')
     return render(request, 'PoutryManagementSysyem/security_form.html', {
         'title': f'Edit Role: {role.name}',
         'eyebrow': 'Authorization',
         'form': form,
-        'back_url': reverse('poultry:role_list'),
+        'back_url': reverse('poultry:user_list'),
         'button_label': 'Save Role',
     })
 
@@ -1063,7 +1089,7 @@ def record_list(request, model_slug):
     if not config:
         return redirect('poultry:crud_index')
     require_model_permission(request, config['model'], 'view')
-    objects = config['model'].objects.all()
+    objects = config['model'].objects.order_by('id')
     return render(request, 'PoutryManagementSysyem/record_list.html', {
         'config': config,
         'model_slug': model_slug,
@@ -1127,7 +1153,10 @@ def record_create(request, model_slug):
         if mobile_money_confirmation_missing(request, model_slug):
             messages.error(request, 'Confirm the Mobile Money payment before saving this egg sale.')
             return render(request, 'PoutryManagementSysyem/record_form.html', record_form_context(config, model_slug, form, 'Create'))
-        obj = form.save()
+        obj = form.save(commit=False)
+        set_feed_consumption_issuer(request, obj)
+        obj.save()
+        form.save_m2m()
         write_audit_log(request, AuditLog.CREATE, obj)
         messages.success(request, f'{config["singular"]} created successfully.')
         return redirect('poultry:record_detail', model_slug=model_slug, pk=obj.pk)
@@ -1173,7 +1202,10 @@ def record_update(request, model_slug, pk):
         if mobile_money_confirmation_missing(request, model_slug):
             messages.error(request, 'Confirm the Mobile Money payment before saving this egg sale.')
             return render(request, 'PoutryManagementSysyem/record_form.html', record_form_context(config, model_slug, form, 'Edit', obj))
-        obj = form.save()
+        obj = form.save(commit=False)
+        set_feed_consumption_issuer(request, obj)
+        obj.save()
+        form.save_m2m()
         write_audit_log(request, AuditLog.UPDATE, obj)
         messages.success(request, f'{config["singular"]} updated successfully.')
         return redirect('poultry:record_detail', model_slug=model_slug, pk=obj.pk)

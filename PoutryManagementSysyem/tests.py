@@ -27,6 +27,54 @@ class CrudViewTests(AuthenticatedTestCase):
 
         self.assertRedirects(response, f'{reverse("login")}?next={reverse("poultry:dashboard")}')
 
+    def test_all_app_pages_require_login(self):
+        self.client.logout()
+        protected_urls = [
+            reverse('poultry:home'),
+            reverse('poultry:dashboard'),
+            reverse('poultry:crud_index'),
+            reverse('poultry:record_list', args=['houses']),
+            reverse('poultry:record_create', args=['houses']),
+            reverse('poultry:user_list'),
+            reverse('poultry:role_list'),
+        ]
+
+        for url in protected_urls:
+            with self.subTest(url=url):
+                response = self.client.get(url)
+                self.assertRedirects(response, f'{reverse("login")}?next={url}')
+
+    def test_login_page_is_accessible_without_login(self):
+        self.client.logout()
+
+        response = self.client.get(reverse('login'))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Poultry Farm Login')
+
+    def test_home_requires_login(self):
+        self.client.logout()
+
+        response = self.client.get(reverse('poultry:home'))
+
+        self.assertRedirects(response, f'{reverse("login")}?next={reverse("poultry:home")}')
+
+    def test_records_require_login(self):
+        self.client.logout()
+
+        response = self.client.get(reverse('poultry:crud_index'))
+
+        self.assertRedirects(response, f'{reverse("login")}?next={reverse("poultry:crud_index")}')
+
+    def test_users_and_roles_require_login(self):
+        self.client.logout()
+
+        users_response = self.client.get(reverse('poultry:user_list'))
+        roles_response = self.client.get(reverse('poultry:role_list'))
+
+        self.assertRedirects(users_response, f'{reverse("login")}?next={reverse("poultry:user_list")}')
+        self.assertRedirects(roles_response, f'{reverse("login")}?next={reverse("poultry:role_list")}')
+
     def test_crud_index_loads(self):
         response = self.client.get(reverse('poultry:crud_index'))
 
@@ -39,6 +87,26 @@ class CrudViewTests(AuthenticatedTestCase):
         response = self.client.get(reverse('poultry:record_list', args=['inventory']))
 
         self.assertRedirects(response, reverse('poultry:crud_index'))
+
+    def test_record_tables_are_ordered_by_id_ascending(self):
+        first_house = PoultryHouse.objects.create(
+            house_name='Zulu House',
+            capacity=300,
+            bird_type=PoultryHouse.LAYER,
+            status=PoultryHouse.ACTIVE,
+        )
+        second_house = PoultryHouse.objects.create(
+            house_name='Alpha House',
+            capacity=300,
+            bird_type=PoultryHouse.LAYER,
+            status=PoultryHouse.ACTIVE,
+        )
+
+        response = self.client.get(reverse('poultry:record_list', args=['houses']))
+
+        self.assertEqual(response.status_code, 200)
+        rows = response.context['rows']
+        self.assertEqual([row['object'].pk for row in rows], [first_house.pk, second_house.pk])
 
     def test_can_create_update_and_delete_house(self):
         create_response = self.client.post(reverse('poultry:record_create', args=['houses']), {
@@ -90,6 +158,24 @@ class CrudViewTests(AuthenticatedTestCase):
         self.assertEqual(response.status_code, 403)
         self.assertFalse(PoultryHouse.objects.filter(house_name='Restricted House').exists())
 
+    def test_sidebar_only_shows_links_allowed_by_user_role(self):
+        limited_user = get_user_model().objects.create_user(
+            username='house-viewer',
+            email='house-viewer@example.com',
+            password='password',
+        )
+        limited_user.user_permissions.add(Permission.objects.get(codename='view_poultryhouse'))
+        self.client.force_login(limited_user)
+
+        response = self.client.get(reverse('poultry:record_list', args=['houses']))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, reverse('poultry:record_list', args=['houses']))
+        self.assertNotContains(response, reverse('poultry:record_list', args=['purchases']))
+        self.assertNotContains(response, reverse('poultry:record_list', args=['feed-consumption']))
+        self.assertNotContains(response, reverse('poultry:user_list'))
+        self.assertNotContains(response, reverse('poultry:record_list', args=['audit-logs']))
+
     def test_can_create_role_with_permissions(self):
         permission = Permission.objects.get(codename='view_poultryhouse')
 
@@ -99,7 +185,7 @@ class CrudViewTests(AuthenticatedTestCase):
         })
 
         role = Group.objects.get(name='Viewer')
-        self.assertRedirects(response, reverse('poultry:role_list'))
+        self.assertRedirects(response, reverse('poultry:user_list'))
         self.assertTrue(role.permissions.filter(pk=permission.pk).exists())
         self.assertTrue(AuditLog.objects.filter(action=AuditLog.CREATE, model_label='auth.Group').exists())
 
@@ -1089,6 +1175,63 @@ class FeedMixCalculationTests(AuthenticatedTestCase):
         self.assertContains(response, 'Feed consumption quantity (10kg) cannot exceed feed mix stock (8kg).')
         self.assertFalse(FeedConsumption.objects.exists())
 
+    def test_feed_consumption_issued_by_uses_logged_in_user(self):
+        house = PoultryHouse.objects.create(
+            house_name='Layer House Issuer',
+            capacity=300,
+            bird_type=PoultryHouse.LAYER,
+            status=PoultryHouse.ACTIVE,
+        )
+        flock = Flock.objects.create(
+            house=house,
+            breed=Flock.ISA_BROWN,
+            number_of_birds=100,
+            current_birds=100,
+            cost_per_bird=Decimal('12000.00'),
+        )
+        feed_mix = FeedMix.objects.create(
+            mix_name=FeedMix.LAYER_FORMULA,
+            quantity=Decimal('10.00'),
+            stock=Decimal('10.00'),
+        )
+
+        form_response = self.client.get(reverse('poultry:record_create', args=['feed-consumption']))
+        response = self.client.post(reverse('poultry:record_create', args=['feed-consumption']), {
+            'flock': flock.pk,
+            'feed_mix': feed_mix.pk,
+            'consumption_date': '2026-06-28',
+            'quantity': '4.00',
+            'issued_by': 'Tampered User',
+            'remarks': '',
+        })
+
+        consumption = FeedConsumption.objects.get()
+        self.assertNotContains(form_response, 'name="issued_by"')
+        self.assertRedirects(response, reverse('poultry:record_detail', args=['feed-consumption', consumption.pk]))
+        self.assertEqual(consumption.issued_by, self.user.username)
+
+    def test_feed_consumption_form_uses_feed_mixes_in_stock(self):
+        stocked_mix = FeedMix.objects.create(
+            mix_name=FeedMix.LAYER_FORMULA,
+            mixing_date='2026-06-28',
+            stock=Decimal('12.00'),
+        )
+        empty_mix = FeedMix.objects.create(
+            mix_name=FeedMix.GROWER_FORMULA,
+            mixing_date='2026-06-28',
+            stock=Decimal('0.00'),
+        )
+
+        response = self.client.get(reverse('poultry:record_create', args=['feed-consumption']))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Feed mix in stock')
+        self.assertContains(response, 'Quantity from stock')
+        self.assertContains(response, str(stocked_mix))
+        self.assertNotContains(response, str(empty_mix))
+        self.assertContains(response, 'feed-consumption-stock-options')
+        self.assertContains(response, '12kgs')
+
     def test_feed_consumption_update_allows_existing_quantity_in_available_stock(self):
         house = PoultryHouse.objects.create(
             house_name='Layer House Stock Edit',
@@ -1128,6 +1271,7 @@ class FeedMixCalculationTests(AuthenticatedTestCase):
         feed_mix.refresh_from_db()
         self.assertRedirects(response, reverse('poultry:record_detail', args=['feed-consumption', consumption.pk]))
         self.assertEqual(consumption.quantity, Decimal('8.00'))
+        self.assertEqual(consumption.issued_by, self.user.username)
         self.assertEqual(feed_mix.stock, Decimal('2.00'))
 
     def test_feed_mix_details_table_shows_totals_last_row(self):

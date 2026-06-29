@@ -115,6 +115,12 @@
                     <strong data-feed-item-stock></strong>
                 </div>
             {% endif %}
+            {% if model_slug == 'feed-consumption' %}
+                <div class="feed-item-preview" data-feed-consumption-stock-preview hidden>
+                    <span>Feed mix stock</span>
+                    <strong data-feed-consumption-stock></strong>
+                </div>
+            {% endif %}
             <div class="form-actions">
                 <button type="submit">Save {{ config.singular }}</button>
                 <a href="{% url 'poultry:record_list' model_slug %}">Cancel</a>
@@ -190,6 +196,51 @@
                     feedMixInput.addEventListener('change', filterPurchasedItems);
                 }
                 filterPurchasedItems();
+            }());
+        </script>
+    {% endif %}
+
+    {% if model_slug == 'feed-consumption' %}
+        {{ feed_consumption_stock_options|json_script:"feed-consumption-stock-options" }}
+        <script>
+            (function () {
+                var form = document.querySelector('.record-form-feed-consumption');
+                if (!form) {
+                    return;
+                }
+
+                var feedMixInput = form.querySelector('[name="feed_mix"]');
+                var quantityInput = form.querySelector('[name="quantity"]');
+                var preview = form.querySelector('[data-feed-consumption-stock-preview]');
+                var stockText = form.querySelector('[data-feed-consumption-stock]');
+                var stockOptions = JSON.parse(document.getElementById('feed-consumption-stock-options').textContent || '{}');
+
+                function syncStock() {
+                    var selected = feedMixInput ? stockOptions[feedMixInput.value] : null;
+                    if (!selected) {
+                        if (quantityInput) {
+                            quantityInput.removeAttribute('max');
+                        }
+                        if (preview) {
+                            preview.hidden = true;
+                        }
+                        return;
+                    }
+                    if (quantityInput) {
+                        quantityInput.setAttribute('max', selected.stock);
+                    }
+                    if (stockText) {
+                        stockText.textContent = selected.stock_display;
+                    }
+                    if (preview) {
+                        preview.hidden = false;
+                    }
+                }
+
+                if (feedMixInput) {
+                    feedMixInput.addEventListener('change', syncStock);
+                }
+                syncStock();
             }());
         </script>
     {% endif %}

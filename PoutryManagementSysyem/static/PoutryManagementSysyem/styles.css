@@ -1054,6 +1054,10 @@ tfoot th {
     width: auto;
 }
 
+.security-table-panel {
+    margin-top: 14px;
+}
+
 .record-form-purchases .form-grid {
     gap: 12px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

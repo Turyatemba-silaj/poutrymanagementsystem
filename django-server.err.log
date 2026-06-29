@@ -711,3 +711,346 @@ C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYST
 Watching for file changes with StatReloader
 C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
 Watching for file changes with StatReloader
+[29/Jun/2026 15:05:46] "GET /records/audit-logs/ HTTP/1.1" 200 4451
+[29/Jun/2026 15:05:46] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 15:05:48] "POST /accounts/logout/ HTTP/1.1" 302 0
+[29/Jun/2026 15:05:48] "GET /accounts/login/ HTTP/1.1" 200 1441
+[29/Jun/2026 15:05:48] "GET /static/PoutryManagementSysyem/images/chick-login-logo.png HTTP/1.1" 304 0
+[29/Jun/2026 15:05:52] "POST /accounts/login/ HTTP/1.1" 302 0
+[29/Jun/2026 15:05:52] "GET /dashboard/ HTTP/1.1" 200 16275
+[29/Jun/2026 15:05:55] "GET /records/audit-logs/ HTTP/1.1" 200 4451
+[29/Jun/2026 15:06:06] "GET /records/audit-logs/1/ HTTP/1.1" 200 3551
+[29/Jun/2026 15:08:48] "POST /accounts/logout/ HTTP/1.1" 302 0
+[29/Jun/2026 15:08:48] "GET /accounts/login/ HTTP/1.1" 200 1441
+[29/Jun/2026 15:08:52] "POST /accounts/login/ HTTP/1.1" 302 0
+[29/Jun/2026 15:08:52] "GET /dashboard/ HTTP/1.1" 200 16275
+[29/Jun/2026 15:11:21] "GET / HTTP/1.1" 200 8141
+[29/Jun/2026 15:11:21] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 15:11:35] "GET /dashboard/ HTTP/1.1" 200 16275
+[29/Jun/2026 15:11:44] "GET /records/ HTTP/1.1" 200 5768
+[29/Jun/2026 15:11:50] "GET /records/audit-logs/ HTTP/1.1" 200 4451
+[29/Jun/2026 15:12:46] "POST /accounts/logout/ HTTP/1.1" 302 0
+[29/Jun/2026 15:12:46] "GET /accounts/login/ HTTP/1.1" 200 1441
+[29/Jun/2026 15:12:46] "GET /static/PoutryManagementSysyem/images/chick-login-logo.png HTTP/1.1" 304 0
+[29/Jun/2026 15:12:51] "POST /accounts/login/ HTTP/1.1" 302 0
+[29/Jun/2026 15:12:51] "GET /dashboard/ HTTP/1.1" 200 16275
+[29/Jun/2026 15:12:53] "GET /records/flocks/ HTTP/1.1" 200 6855
+[29/Jun/2026 15:13:59] "GET /records/flocks/1/ HTTP/1.1" 200 3895
+[29/Jun/2026 15:14:45] "GET /records/expenses/ HTTP/1.1" 200 5951
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 16:12:08] "GET / HTTP/1.1" 200 8141
+[29/Jun/2026 16:12:08] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 200 34848
+Not Found: /favicon.ico
+[29/Jun/2026 16:12:08] "GET /favicon.ico HTTP/1.1" 404 7338
+[29/Jun/2026 16:14:22] "GET /dashboard/ HTTP/1.1" 200 16243
+[29/Jun/2026 16:14:22] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 16:14:30] "GET /dashboard/ HTTP/1.1" 200 16243
+[29/Jun/2026 16:14:39] "GET / HTTP/1.1" 200 8141
+Not Found: /favicon.ico
+[29/Jun/2026 16:14:40] "GET /favicon.ico HTTP/1.1" 404 7338
+[29/Jun/2026 16:14:47] "GET /dashboard/ HTTP/1.1" 200 16243
+[29/Jun/2026 16:14:47] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 16:16:05] "GET / HTTP/1.1" 200 8141
+[29/Jun/2026 16:16:05] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 16:16:39] "GET /dashboard/ HTTP/1.1" 200 16243
+[29/Jun/2026 16:16:39] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 16:16:41] "POST /accounts/logout/ HTTP/1.1" 302 0
+[29/Jun/2026 16:16:41] "GET /accounts/login/ HTTP/1.1" 200 1441
+[29/Jun/2026 16:16:41] "GET /static/PoutryManagementSysyem/images/chick-login-logo.png HTTP/1.1" 304 0
+[29/Jun/2026 16:18:51] "POST /accounts/login/ HTTP/1.1" 302 0
+[29/Jun/2026 16:18:51] "GET /dashboard/ HTTP/1.1" 200 16243
+[29/Jun/2026 16:18:51] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 16:18:54] "GET /dashboard/ HTTP/1.1" 200 16243
+[29/Jun/2026 16:18:57] "GET /users/ HTTP/1.1" 200 4328
+[29/Jun/2026 16:18:58] "GET /records/houses/ HTTP/1.1" 200 4146
+[29/Jun/2026 16:19:02] "GET /records/flocks/ HTTP/1.1" 200 6823
+[29/Jun/2026 16:19:08] "GET /records/feed-mixes/ HTTP/1.1" 200 7249
+[29/Jun/2026 16:19:33] "GET /records/feed-mixes/add/ HTTP/1.1" 200 18846
+[29/Jun/2026 16:27:35] "GET / HTTP/1.1" 200 8141
+[29/Jun/2026 16:27:35] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 16:28:24] "GET /dashboard/ HTTP/1.1" 200 16243
+[29/Jun/2026 16:28:36] "POST /accounts/logout/ HTTP/1.1" 302 0
+[29/Jun/2026 16:28:36] "GET /accounts/login/ HTTP/1.1" 200 1441
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PMS\settings.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 16:31:53] "GET /accounts/login/ HTTP/1.1" 200 1441
+[29/Jun/2026 16:31:53] "GET /static/PoutryManagementSysyem/images/chick-login-logo.png HTTP/1.1" 304 0
+[29/Jun/2026 16:31:53] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 16:32:04] "GET /dashboard/ HTTP/1.1" 302 0
+[29/Jun/2026 16:32:04] "GET /accounts/login/?next=/dashboard/ HTTP/1.1" 200 1452
+[29/Jun/2026 16:32:23] "GET / HTTP/1.1" 302 0
+[29/Jun/2026 16:32:23] "GET /accounts/login/?next=/ HTTP/1.1" 200 1442
+[29/Jun/2026 16:32:36] "GET /dashboard/ HTTP/1.1" 302 0
+[29/Jun/2026 16:32:36] "GET /accounts/login/?next=/dashboard/ HTTP/1.1" 200 1452
+[29/Jun/2026 16:32:51] "POST /accounts/login/?next=/dashboard/ HTTP/1.1" 302 0
+[29/Jun/2026 16:32:51] "GET /dashboard/ HTTP/1.1" 200 16243
+[29/Jun/2026 16:35:23] "GET /records/feed-consumption/ HTTP/1.1" 200 5419
+[29/Jun/2026 16:35:23] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 16:40:31] "GET /records/feed-consumption/ HTTP/1.1" 200 5419
+[29/Jun/2026 16:40:31] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 16:40:34] "GET /records/feed-consumption/ HTTP/1.1" 200 5419
+[29/Jun/2026 16:40:42] "GET /records/feed-consumption/add/ HTTP/1.1" 200 4903
+[29/Jun/2026 16:42:05] "GET /records/feed-mixes/ HTTP/1.1" 200 7249
+[29/Jun/2026 16:42:13] "GET /records/feed-mix-details/ HTTP/1.1" 200 9955
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py changed, reloading.
+Watching for file changes with StatReloader
+[29/Jun/2026 16:52:42] "GET /records/audit-logs/ HTTP/1.1" 200 7308
+[29/Jun/2026 16:52:42] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 16:52:49] "GET /records/houses/ HTTP/1.1" 200 4146
+[29/Jun/2026 16:52:54] "GET /records/houses/add/ HTTP/1.1" 200 4383
+[29/Jun/2026 16:53:26] "POST /records/houses/add/ HTTP/1.1" 302 0
+[29/Jun/2026 16:53:26] "GET /records/houses/2/ HTTP/1.1" 200 3472
+[29/Jun/2026 16:53:28] "GET /records/houses/ HTTP/1.1" 200 5022
+[29/Jun/2026 16:53:39] "GET /dashboard/ HTTP/1.1" 200 16255
+[29/Jun/2026 16:53:43] "GET /records/flocks/ HTTP/1.1" 200 6823
+[29/Jun/2026 16:54:03] "GET /dashboard/ HTTP/1.1" 200 16255
+[29/Jun/2026 16:55:54] "GET /records/houses/ HTTP/1.1" 200 5022
+[29/Jun/2026 16:56:00] "GET /records/flocks/ HTTP/1.1" 200 6823
+[29/Jun/2026 16:56:14] "GET /dashboard/ HTTP/1.1" 200 16255
+[29/Jun/2026 16:56:20] "GET /records/feed-mixes/ HTTP/1.1" 200 7249
+[29/Jun/2026 16:56:46] "GET /records/houses/ HTTP/1.1" 200 5022
+[29/Jun/2026 16:56:52] "GET /records/purchases/ HTTP/1.1" 200 8013
+[29/Jun/2026 16:57:23] "GET /records/feed-mix-details/ HTTP/1.1" 200 9955
+[29/Jun/2026 16:57:23] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 16:57:26] "GET /records/feed-mix-details/ HTTP/1.1" 200 9955
+[29/Jun/2026 16:57:27] "GET /records/feed-mixes/ HTTP/1.1" 200 7249
+[29/Jun/2026 16:57:30] "GET /records/feed-mixes/add/ HTTP/1.1" 200 18865
+[29/Jun/2026 16:58:13] "GET /records/feed-mixes/add/ HTTP/1.1" 200 18865
+[29/Jun/2026 16:59:30] "POST /records/feed-mixes/add/ HTTP/1.1" 302 0
+[29/Jun/2026 16:59:30] "GET /records/feed-mixes/6/ HTTP/1.1" 200 3911
+[29/Jun/2026 16:59:33] "GET /records/feed-mixes/ HTTP/1.1" 200 8293
+[29/Jun/2026 17:02:43] "GET /records/feed-mix-details/ HTTP/1.1" 200 13029
+[29/Jun/2026 17:02:43] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 17:04:42] "GET /users/ HTTP/1.1" 200 4328
+[29/Jun/2026 17:05:17] "GET /users/add/ HTTP/1.1" 200 5663
+[29/Jun/2026 17:07:02] "POST /users/add/ HTTP/1.1" 302 0
+[29/Jun/2026 17:07:02] "GET /users/ HTTP/1.1" 200 5098
+[29/Jun/2026 17:07:18] "GET /roles/add/ HTTP/1.1" 200 20662
+[29/Jun/2026 17:08:33] "POST /roles/add/ HTTP/1.1" 200 20833
+[29/Jun/2026 17:08:33] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 17:09:08] "POST /roles/add/ HTTP/1.1" 302 0
+[29/Jun/2026 17:09:08] "GET /users/ HTTP/1.1" 200 5351
+[29/Jun/2026 17:12:14] "POST /accounts/logout/ HTTP/1.1" 302 0
+[29/Jun/2026 17:12:14] "GET /accounts/login/ HTTP/1.1" 200 1441
+[29/Jun/2026 17:12:14] "GET /static/PoutryManagementSysyem/images/chick-login-logo.png HTTP/1.1" 304 0
+[29/Jun/2026 17:12:18] "POST /accounts/login/ HTTP/1.1" 302 0
+[29/Jun/2026 17:12:18] "GET /dashboard/ HTTP/1.1" 200 13703
+[29/Jun/2026 17:12:26] "POST /accounts/logout/ HTTP/1.1" 302 0
+[29/Jun/2026 17:12:26] "GET /accounts/login/ HTTP/1.1" 200 1441
+[29/Jun/2026 17:12:32] "POST /accounts/login/ HTTP/1.1" 302 0
+[29/Jun/2026 17:12:32] "GET /dashboard/ HTTP/1.1" 200 13703
+Forbidden (Permission denied): /records/audit-logs/
+Traceback (most recent call last):
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 1091, in record_list
+    require_model_permission(request, config['model'], 'view')
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 135, in require_model_permission
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+[29/Jun/2026 17:12:36] "GET /records/audit-logs/ HTTP/1.1" 403 135
+[29/Jun/2026 17:12:43] "POST /accounts/logout/ HTTP/1.1" 302 0
+[29/Jun/2026 17:12:43] "GET /accounts/login/ HTTP/1.1" 200 1441
+[29/Jun/2026 17:12:50] "POST /accounts/login/ HTTP/1.1" 302 0
+[29/Jun/2026 17:12:50] "GET /dashboard/ HTTP/1.1" 200 16255
+[29/Jun/2026 17:12:53] "GET /users/ HTTP/1.1" 200 5214
+[29/Jun/2026 17:12:55] "GET /records/houses/ HTTP/1.1" 200 5022
+[29/Jun/2026 17:12:59] "POST /accounts/logout/ HTTP/1.1" 302 0
+[29/Jun/2026 17:12:59] "GET /accounts/login/ HTTP/1.1" 200 1441
+[29/Jun/2026 17:13:09] "POST /accounts/login/ HTTP/1.1" 302 0
+[29/Jun/2026 17:13:09] "GET /dashboard/ HTTP/1.1" 200 13703
+Forbidden (Permission denied): /records/houses/
+Traceback (most recent call last):
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 1091, in record_list
+    require_model_permission(request, config['model'], 'view')
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 135, in require_model_permission
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+[29/Jun/2026 17:13:11] "GET /records/houses/ HTTP/1.1" 403 135
+[29/Jun/2026 17:16:19] "GET /dashboard/ HTTP/1.1" 200 13167
+[29/Jun/2026 17:16:19] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+[29/Jun/2026 17:16:23] "GET / HTTP/1.1" 200 8141
+[29/Jun/2026 17:16:23] "GET /static/PoutryManagementSysyem/images/poultry-hero.png HTTP/1.1" 304 0
+[29/Jun/2026 17:16:27] "GET /dashboard/ HTTP/1.1" 200 13167
+[29/Jun/2026 17:16:33] "GET / HTTP/1.1" 200 8141
+Forbidden (Permission denied): /records/egg-production/
+Traceback (most recent call last):
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 1091, in record_list
+    require_model_permission(request, config['model'], 'view')
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 135, in require_model_permission
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+[29/Jun/2026 17:16:43] "GET /records/egg-production/ HTTP/1.1" 403 135
+[29/Jun/2026 17:17:06] "GET /dashboard/?period=Weekly&start=2026-06-29 HTTP/1.1" 200 14651
+[29/Jun/2026 17:17:36] "GET /dashboard/?period=Monthly&start=2026-06-29 HTTP/1.1" 200 13420
+[29/Jun/2026 17:17:54] "GET /dashboard/?period=Yearly&start=2026-06-29 HTTP/1.1" 200 58865
+[29/Jun/2026 17:18:18] "GET /dashboard/ HTTP/1.1" 200 13167
+[29/Jun/2026 17:18:19] "GET / HTTP/1.1" 200 8141
+[29/Jun/2026 17:18:33] "GET / HTTP/1.1" 200 8141
+[29/Jun/2026 17:18:34] "GET / HTTP/1.1" 200 8141
+[29/Jun/2026 17:18:40] "GET /dashboard/ HTTP/1.1" 200 13167
+[29/Jun/2026 17:19:54] "GET /records/ HTTP/1.1" 302 0
+[29/Jun/2026 17:19:54] "GET / HTTP/1.1" 302 0
+[29/Jun/2026 17:19:54] "GET /dashboard/ HTTP/1.1" 302 0
+[29/Jun/2026 17:19:54,957] - Broken pipe from ('127.0.0.1', 61717)
+[29/Jun/2026 17:19:54,961] - Broken pipe from ('127.0.0.1', 61718)
+[29/Jun/2026 17:19:54,963] - Broken pipe from ('127.0.0.1', 61716)
+[29/Jun/2026 17:21:34] "GET /dashboard/ HTTP/1.1" 200 13167
+[29/Jun/2026 17:21:43] "GET / HTTP/1.1" 200 8141
+[29/Jun/2026 17:21:51] "GET /dashboard/ HTTP/1.1" 200 13167
+[29/Jun/2026 17:21:55] "POST /accounts/logout/ HTTP/1.1" 302 0
+[29/Jun/2026 17:21:56] "GET /accounts/login/ HTTP/1.1" 200 1441
+[29/Jun/2026 17:21:59] "POST /accounts/login/ HTTP/1.1" 302 0
+[29/Jun/2026 17:21:59] "GET /dashboard/ HTTP/1.1" 200 13167
+[29/Jun/2026 17:22:08] "GET / HTTP/1.1" 200 8141
+[29/Jun/2026 17:22:28] "POST /accounts/logout/ HTTP/1.1" 302 0
+[29/Jun/2026 17:22:28] "GET /accounts/login/ HTTP/1.1" 200 1441
+[29/Jun/2026 17:22:32] "POST /accounts/login/ HTTP/1.1" 302 0
+[29/Jun/2026 17:22:32] "GET /dashboard/ HTTP/1.1" 200 13167
+Forbidden (Permission denied): /records/egg-production/add/
+Traceback (most recent call last):
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 1130, in record_create
+    require_model_permission(request, config['model'], 'add')
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 135, in require_model_permission
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+[29/Jun/2026 17:22:44] "GET /records/egg-production/add/ HTTP/1.1" 403 135
+Forbidden (Permission denied): /records/egg-sales/add/
+Traceback (most recent call last):
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 1130, in record_create
+    require_model_permission(request, config['model'], 'add')
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 135, in require_model_permission
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+[29/Jun/2026 17:22:49] "GET /records/egg-sales/add/ HTTP/1.1" 403 135
+Forbidden (Permission denied): /records/purchases/add/
+Traceback (most recent call last):
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 1130, in record_create
+    require_model_permission(request, config['model'], 'add')
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 135, in require_model_permission
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+[29/Jun/2026 17:22:53] "GET /records/purchases/add/ HTTP/1.1" 403 135
+Forbidden (Permission denied): /records/egg-sales/add/
+Traceback (most recent call last):
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 1130, in record_create
+    require_model_permission(request, config['model'], 'add')
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 135, in require_model_permission
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+[29/Jun/2026 17:23:25] "GET /records/egg-sales/add/ HTTP/1.1" 403 135
+[29/Jun/2026 17:23:40] "GET /dashboard/?period=Weekly&start=2026-06-29 HTTP/1.1" 200 14651
+[29/Jun/2026 17:23:40] "GET /static/PoutryManagementSysyem/styles.css HTTP/1.1" 304 0
+Forbidden (Permission denied): /records/egg-sales/add/
+Traceback (most recent call last):
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 1130, in record_create
+    require_model_permission(request, config['model'], 'add')
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 135, in require_model_permission
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+[29/Jun/2026 17:24:19] "GET /records/egg-sales/add/ HTTP/1.1" 403 135
+Forbidden (Permission denied): /records/purchases/add/
+Traceback (most recent call last):
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 1130, in record_create
+    require_model_permission(request, config['model'], 'add')
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 135, in require_model_permission
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+[29/Jun/2026 17:24:23] "GET /records/purchases/add/ HTTP/1.1" 403 135
+[29/Jun/2026 17:24:32] "GET /dashboard/ HTTP/1.1" 200 13167
+[29/Jun/2026 17:24:34] "GET / HTTP/1.1" 200 8141
+[29/Jun/2026 17:24:45] "GET /records/ HTTP/1.1" 200 5215
+Forbidden (Permission denied): /records/egg-production/
+Traceback (most recent call last):
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 1091, in record_list
+    require_model_permission(request, config['model'], 'view')
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PoutryManagementSysyem\views.py", line 135, in require_model_permission
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+[29/Jun/2026 17:24:48] "GET /records/egg-production/ HTTP/1.1" 403 135
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\PMS\settings.py changed, reloading.
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py:62: UserWarning: No directory at: C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\staticfiles\
+  mw_instance = middleware(adapted_handler)
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py:62: UserWarning: No directory at: C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\staticfiles\
+  mw_instance = middleware(adapted_handler)
+C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\.venv\Lib\site-packages\django\core\handlers\base.py:62: UserWarning: No directory at: C:\Users\programimg\OneDrive - Infectious Diseases Institute\Desktop\POUTRY SYSTEM\staticfiles\
+  mw_instance = middleware(adapted_handler)
